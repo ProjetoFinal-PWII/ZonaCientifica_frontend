@@ -62,11 +62,12 @@ body{
     border-radius: 10px;
     background-color: #D9D9D9;
     border: 2px solid #c4c4c4;
-    padding: 0.7% 1.5% 0.7% 1.5%;
-    font-size: 130%;
+    padding: 0.5% 1% 0.5% 1%;
+    font-size: 120%;
     font-weight: 900;
     font-family: Inter;
     font-weight: 700;
+    box-sizing: content-box;
 }
 #form a{
     text-align: center;
