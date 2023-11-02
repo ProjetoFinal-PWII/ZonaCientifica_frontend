@@ -1,0 +1,55 @@
+body{
+    background-image: url("../../assets/img/color-morph2.png");
+    background-position: 50% 60%;
+    background-size: cover;
+}
+
+#category{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 47px;
+    flex-direction: column; 
+}
+
+#categories{
+    margin-top: 39px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#categories button{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+}
+#categories button img{
+    width: 23.33px;
+    height: 30px;
+}
+#listCategories ul{
+    display: flex;
+    flex-direction: row;
+}
+#listCategories ul li{
+    list-style-type: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#listCategories ul li img{
+    width: 208px;
+    height: 59px;
+}
+
+#events{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 57px;
+}
+#category h1, #events h1{
+    color: #FFF;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
