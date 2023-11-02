@@ -1,9 +1,9 @@
-import { Events } from "./components/Events/events";
+import { Profile } from "./components/Profile/profile";
 
 function App() {
   return (
     <>
-      <Events />
+      <Profile />
     </>
   );
 }
