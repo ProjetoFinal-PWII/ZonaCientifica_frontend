@@ -9,7 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 47px;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 #categories{
@@ -32,24 +32,59 @@ body{
     display: flex;
     flex-direction: row;
 }
+#listCategories ul li:nth-child(1) div{
+    background-image: url("../../assets/img/congressImage.png");
+}
+#listCategories ul li:nth-child(2) div{
+    background-image: url("../../assets/img/WorkshopImage.png");
+}
+#listCategories ul li:nth-child(3) div{
+    background-image: url("../../assets/img/seminarImage.png");
+}
+#listCategories ul li:nth-child(4) div{
+    background-image: url("../../assets/img/lectureImage.png");
+}
+
+#listCategories ul li div{
+    width: 208px;
+    height: 59px;
+    background-size: cover;
+    border-radius: 10px;
+    font-style: normal;
+    font-family: Josefin Sans;
+    font-weight: 700;
+    font-size: 26px;
+    text-shadow:
+    1px 1px #000,
+    -2px 1px #000,
+    -2px -1px #000,
+    1px -1px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+}
+
 #listCategories ul li{
     list-style-type: none;
     margin-left: 5px;
     margin-right: 5px;
 }
-#listCategories ul li img{
-    width: 208px;
-    height: 59px;
-}
 
-#events{
+#category h1, #event h1{
+    color: #FFF;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#event{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 57px;
+    flex-direction: column;
 }
-#category h1, #events h1{
-    color: #FFF;
-    font-size: 40px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+#events{
+    margin-top: 39px;
+    display: flex;
+    flex-direction: row;
 }

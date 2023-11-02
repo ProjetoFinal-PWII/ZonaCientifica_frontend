@@ -2,10 +2,7 @@ import { Header } from "../Header/header";
 import "./events.css";
 import buttonPrevious from "../../assets/img/previous.png";
 import buttonNext from "../../assets/img/next.png";
-import congressImage from "../../assets/img/congressImage.png";
-import workshopImage from "../../assets/img/WorkshopImage.png";
-import seminarImage from "../../assets/img/seminarImage.png";
-import lectureImage from "../../assets/img/lectureImage.png";
+import { Card } from "./card";
 
 export function Events() {
   return (
@@ -19,10 +16,18 @@ export function Events() {
           </button>
           <div id="listCategories">
             <ul>
-              <li ><img src={congressImage}/></li>
-              <li><img src={workshopImage}/></li>
-              <li><img src={seminarImage}/></li>
-              <li><img src={lectureImage}/></li>
+              <li>
+                <div>Congresso</div>
+              </li>
+              <li>
+                <div>Workshop</div>
+              </li>
+              <li>
+                <div>Seminário</div>
+              </li>
+              <li>
+                <div>Palestra</div>
+              </li>
             </ul>
           </div>
           <button>
@@ -30,8 +35,11 @@ export function Events() {
           </button>
         </div>
       </div>
-      <div id="events">
+      <div id="event">
         <h1>Eventos</h1>
+        <div id="events">
+          <Card/>
+        </div>
       </div>
     </>
   );
