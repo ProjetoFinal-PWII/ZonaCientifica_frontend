@@ -3,6 +3,7 @@ import "./events.css";
 import buttonPrevious from "../../assets/img/previous.png";
 import buttonNext from "../../assets/img/next.png";
 import { Card } from "./card";
+import { cards } from "../../../data";
 
 export function Events() {
   return (
@@ -38,7 +39,21 @@ export function Events() {
       <div id="event">
         <h1>Eventos</h1>
         <div id="events">
-          <Card/>
+          {cards.map((card) => {
+            return (
+              <Card
+                img={card.img}
+                tittle={card.tittle}
+                description={card.description}
+                date={card.date}
+              />
+            );
+          })}
+          {cards.length === 0 && (
+            <>
+              <h3>Sem eventos.</h3>
+            </>
+          )}
         </div>
       </div>
     </>

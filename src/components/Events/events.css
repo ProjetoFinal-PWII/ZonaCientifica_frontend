@@ -84,7 +84,9 @@ body{
     flex-direction: column;
 }
 #events{
-    margin-top: 39px;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
