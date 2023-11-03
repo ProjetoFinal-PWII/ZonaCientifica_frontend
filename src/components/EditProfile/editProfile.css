@@ -1,0 +1,98 @@
+.body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.boxEditProfile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+  width: 50%;
+  border-radius: 20px;
+  border: 1px solid #000;
+  background: #D9D9D9;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.picture{
+  margin-top: 5%;
+  width: 171px;
+  height: 171px;
+}
+.iconEdit{
+  width: 20px;
+  height: 20px;
+}
+.boxEditProfile div button{
+  background-color: transparent;
+  border: 0;
+}
+.name{
+  color: #000;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.user{
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.contact{
+  color: #000;
+  font-family: Inter;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.number{
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.email{
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.boxEditProfile div:nth-child(n+2){
+  display: flex;
+  gap: 10px;
+}
+.boxEditProfile div:nth-child(2){
+  margin-top: 2%;
+}
+.boxContact{
+  display: flex;
+  flex-direction: column;
+  margin-top: 4%;
+  margin-left: -3%;
+}
+.buttonEdit{
+  width: 44px;
+  height: 42px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  background: rgba(217, 217, 217, 0.20);
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonEdit img{
+  width: 32px;
+  height: 32px;
+}
