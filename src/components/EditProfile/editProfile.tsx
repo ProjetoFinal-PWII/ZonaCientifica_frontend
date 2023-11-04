@@ -2,7 +2,7 @@ import './editProfile.css'
 import { Header } from "../Header/header"
 import picture from "../../assets/img/picture.png";
 import iconEdit from "../../assets/img/iconEdit.png"
-import edit from "../../assets/img/edit.png"
+import checkCircle from "../../assets/img/check-circle.png"
 
 export function EditProfile(){
   return (
@@ -50,7 +50,7 @@ export function EditProfile(){
 
           </div>
 
-          <button className='buttonEdit'><img src={edit} alt="edit" /></button>
+          <button className='buttonSave'><img src={checkCircle}/></button>
         </div>
       </div>
     </>
