@@ -1,9 +1,9 @@
-import { DetailEvent } from "./components/Events/detailEvent";
+import { Participating } from "./components/Participating/participating";
 
 function App() {
   return (
     <>
-      <DetailEvent />
+      <Participating />
     </>
   );
 }
