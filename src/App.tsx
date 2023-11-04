@@ -1,9 +1,9 @@
-import { EditProfile } from "./components/EditProfile/editProfile";
+import { Favorites } from "./components/Favorites/favorites";
 
 function App() {
   return (
     <>
-      <EditProfile />
+      <Favorites />
     </>
   );
 }
