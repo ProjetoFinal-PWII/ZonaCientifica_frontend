@@ -1,9 +1,12 @@
 import { Header } from "../Header/header";
 import "./events.css";
-import buttonPrevious from "../../assets/img/previous.png";
-import buttonNext from "../../assets/img/next.png";
 import { Card } from "./card";
-import { cards } from "../../../data";
+import { categories, cards } from "../../../data";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export function Events() {
   return (
@@ -12,28 +15,18 @@ export function Events() {
       <div id="category">
         <h1>Categorias</h1>
         <div id="categories">
-          <button>
-            <img src={buttonPrevious} alt="Anterior" />
-          </button>
-          <div id="listCategories">
-            <ul>
-              <li>
-                <div>Congresso</div>
-              </li>
-              <li>
-                <div>Workshop</div>
-              </li>
-              <li>
-                <div>Seminário</div>
-              </li>
-              <li>
-                <div>Palestra</div>
-              </li>
-            </ul>
-          </div>
-          <button>
-            <img src={buttonNext} alt="Próximo" />
-          </button>
+          <Swiper slidesPerView={4} spaceBetween={5} navigation>
+            {categories.map((category) => (
+              <SwiperSlide>
+                <button >
+                  <div>
+                    <img src={category.img}/>
+                    <figcaption>{category.type}</figcaption>
+                  </div>
+                </button>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
       <div id="event">

@@ -4,71 +4,56 @@ body{
     background-size: cover;
 }
 
-#category{  
+#category{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 47px;
     flex-direction: column;
 }
-
 #categories{
-    margin-top: 39px;
+    margin-top: 30px;
+    width: 75%;
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 #categories button{
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
+    cursor: pointer;
+    border-radius: 11px;
     border: none;
-}
-#categories button img{
-    width: 23.33px;
-    height: 30px;
-}
-#listCategories ul{
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
-#listCategories ul li:nth-child(1) div{
-    background-image: url("../../assets/img/congressImage.png");
+#categories button:active{
+    cursor: grabbing;
 }
-#listCategories ul li:nth-child(2) div{
-    background-image: url("../../assets/img/WorkshopImage.png");
+#categories button div{
+    position: relative;
+    display: inline-block;
 }
-#listCategories ul li:nth-child(3) div{
-    background-image: url("../../assets/img/seminarImage.png");
-}
-#listCategories ul li:nth-child(4) div{
-    background-image: url("../../assets/img/lectureImage.png");
-}
-
-#listCategories ul li div{
-    width: 208px;
-    height: 59px;
-    background-size: cover;
-    border-radius: 10px;
-    font-style: normal;
-    font-family: Josefin Sans;
-    font-weight: 700;
-    font-size: 26px;
+#categories button div figcaption{
+    position: relative;
+    margin-top: -45px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
     text-shadow:
     1px 1px #000,
     -2px 1px #000,
     -2px -1px #000,
     1px -1px #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
+    font-style: normal;
+    font-family: Josefin Sans;
+    font-weight: 700;
+    font-size: 26px;
 }
 
-#listCategories ul li{
-    list-style-type: none;
-    margin-left: 5px;
-    margin-right: 5px;
+#categories button div img{
+    width: 248px;
+    height: 64px;
 }
 
 #category h1, #event h1{

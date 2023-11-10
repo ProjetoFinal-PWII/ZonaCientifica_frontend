@@ -1,9 +1,9 @@
-import { Participating } from "./components/Participating/participating";
+import { Events } from "./components/Events/events";
 
 function App() {
   return (
     <>
-      <Participating />
+      <Events />
     </>
   );
 }
