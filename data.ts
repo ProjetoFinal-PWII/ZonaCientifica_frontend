@@ -1,3 +1,30 @@
+export const categories = [
+  {
+    type: "Congresso",
+    img: "./src/assets/img/congressImage.png",
+  },
+  {
+    type: "Workshop",
+    img: "./src/assets/img/WorkshopImage.png",
+  },
+  {
+    type: "Seminário",
+    img: "./src/assets/img/seminarImage.png",
+  },
+  {
+    type: "Palestra",
+    img: "./src/assets/img/lectureImage.png",
+  },
+  {
+    type: "Meeting",
+    img: "./src/assets/img/meetingImage.png",
+  },
+  {
+    type: "Mostra",
+    img: "./src/assets/img/mostraImage.png",
+  },
+];
+
 export const cards = [
   {
     img: "./src/assets/img/sertaoComp.png",
