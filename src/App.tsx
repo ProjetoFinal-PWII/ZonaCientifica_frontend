@@ -1,9 +1,9 @@
-import { Login } from "./screens/Login/login";
+import { Events } from "./screens/Events/events";
 
 function App() {
   return (
     <>
-      <Login />
+      <Events />
     </>
   );
 }
