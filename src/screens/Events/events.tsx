@@ -26,7 +26,6 @@ export function Events() {
     try {
       api.get("/events").then((res) => {
         setEvents(res.data);
-        console.log(events);
       });
     } catch (error) {
       console.log("ERRO: " + error);
@@ -36,6 +35,7 @@ export function Events() {
   useEffect(() => {
     findEvents();
   }, []);
+
   return (
     <>
       <Header />
@@ -59,15 +59,8 @@ export function Events() {
       <div id="event">
         <h1>Eventos</h1>
         <div id="events">
-          {cards.map((card) => {
-            return (
-              <Card
-                img={card.img}
-                tittle={card.tittle}
-                description={card.description}
-                date={card.date}
-              />
-            );
+          {events.map((event) => {
+            return <Card key={event._id} event={event} />;
           })}
           {cards.length === 0 && (
             <>
