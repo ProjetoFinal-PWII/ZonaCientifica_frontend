@@ -3,8 +3,68 @@ import "./detailEvent.css";
 import { cards } from "../../../data";
 import calendar from "../../assets/img/calendar.png";
 import location from "../../assets/img/location.png";
+import { useEffect } from "react";
+import { api } from "../../utils/api";
 
 export function DetailEvent() {
+  const [participating, setParticipating] = useState(false);
+  //const context = useAuth();
+
+  async function findParticipating() {
+    try {
+      api
+        .post("/getParticipatingList", { email: context.user?.email })
+        .then((res) => {
+          const list = res.data.participatingList;
+          list.map((participating) => {
+            if (participating._id === eventId) {
+              setParticipating(true);
+            }
+          });
+        });
+    } catch (error) {
+      console.log("ERRO: " + error);
+    }
+  }
+  async function addParticipating() {
+    try {
+      api.post("/addParticipating", {
+        email: context.user?.email,
+        _id: eventId,
+        title: eventTitle,
+        picture: eventPicture,
+        description: eventDescription,
+        date: eventDate,
+        location: eventLocation,
+      });
+    } catch (error) {
+      console.log("ERRO: " + error);
+    }
+  }
+  async function deleteParticipating() {
+    try {
+      api.post("/deleteParticipating", {
+        email: context.user?.email,
+        _id: eventId,
+      });
+    } catch (error) {
+      console.log("ERRO: " + error);
+    }
+  }
+  async function changeParticipating() {
+    if (participating === true) {
+      deleteParticipating();
+      setParticipating(false);
+    } else {
+      addParticipating();
+      setParticipating(true);
+    }
+  }
+
+  useEffect(() => {
+    setParticipating(false);
+    findParticipating();
+  }, []);
   return (
     <>
       <Header />
