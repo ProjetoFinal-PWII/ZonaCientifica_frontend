@@ -1,12 +1,15 @@
+import { Router } from "./Router";
 import { AuthProvider } from "./contexts/auth";
-import { Login } from "./screens/Login/login";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <>
-    <AuthProvider>
-      <Login />
-    </AuthProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </AuthProvider>
     </>
   );
 }
