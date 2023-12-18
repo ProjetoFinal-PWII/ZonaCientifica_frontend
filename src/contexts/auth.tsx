@@ -44,12 +44,13 @@ export function AuthProvider({ children }: Props) {
 
   async function login(email: string, password: string) {
     try {
-      const response = await api.post("/login", { email, password });
-      api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
-      setUser(response.data);
-      localStorage.setItem("user", JSON.stringify(response.data));
-      localStorage.setItem("auth.token", response.data.token);
-      localStorage.setItem("auth.user", JSON.stringify(user));
+      await api.post("/login", { email, password }).then((response)=>{
+        api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
+        setUser(response.data);
+        localStorage.setItem("user", JSON.stringify(response.data));
+        localStorage.setItem("auth.token", response.data.token);
+        localStorage.setItem("auth.user", JSON.stringify(user));
+      })
     } catch (error) {
       console.log(error);
     }
