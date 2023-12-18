@@ -1,13 +1,13 @@
 import "./card.css";
 
 type Props = {
-  img: string,
-  tittle: string,
-  description: string,
-  date: string,
-}
+  img: string;
+  tittle: string;
+  description: string;
+  date: string;
+};
 
-export function Card({ img, tittle, description, date }:Props) {
+export function Card({ img, tittle, description, date }: Props) {
   return (
     <>
       <div id="card">

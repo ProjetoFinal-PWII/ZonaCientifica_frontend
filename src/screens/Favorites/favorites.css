@@ -1,21 +1,22 @@
-body{
+body {
   background-image: url("../../assets/img/color-morph2.png");
   background-position: 50% 60%;
   background-size: cover;
 }
-#category h1, #event h1{
-  color: #FFF;
+#category h1,
+#event h1 {
+  color: #fff;
   font-size: 40px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-#event{
+#event {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 57px;
   flex-direction: column;
 }
-#events{
+#events {
   margin-top: 50px;
   display: flex;
   flex-direction: row;

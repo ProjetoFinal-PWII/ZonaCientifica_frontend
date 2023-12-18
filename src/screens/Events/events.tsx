@@ -1,6 +1,6 @@
-import { Header } from "../Header/header";
+import { Header } from "../../components/Header/header";
 import "./events.css";
-import { Card } from "./card";
+import { Card } from "../../components/Card/card";
 import { categories, cards } from "../../../data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -18,9 +18,9 @@ export function Events() {
           <Swiper slidesPerView={4} spaceBetween={5} navigation>
             {categories.map((category) => (
               <SwiperSlide>
-                <button >
+                <button>
                   <div>
-                    <img src={category.img}/>
+                    <img src={category.img} />
                     <figcaption>{category.type}</figcaption>
                   </div>
                 </button>
