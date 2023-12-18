@@ -1,9 +1,9 @@
 import "./favorites.css";
 import { Header } from "../../components/Header/header";
-import { Card } from "../../components/Card/card";
 import { cards } from "../../../data";
 import { api } from "../../utils/api";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { CardFavorite } from "../../components/CardFavorite/cardFavorite";
 
 type Events = {
   id: string;
@@ -22,7 +22,7 @@ export function Favorites() {
   async function findFavorites() {
     try {
       api
-        .post("/getFavoriteList", { email: context.user?.email })
+        .post("/getFavoriteList", { email: "guilherme@gmail.com" })
         .then((res) => {
           const list = res.data.favoriteList;
           setFavorites(list);
@@ -32,7 +32,7 @@ export function Favorites() {
     }
   }
 
-  useFocusEffect(() => {
+  useEffect(() => {
     findFavorites();
   });
   return (
@@ -41,15 +41,8 @@ export function Favorites() {
       <div id="event">
         <h1>Meus Favoritos</h1>
         <div id="events">
-          {cards.map((card) => {
-            return (
-              <Card
-                img={card.img}
-                tittle={card.tittle}
-                description={card.description}
-                date={card.date}
-              />
-            );
+          {favorites.map((favorite) => {
+            return <CardFavorite key={favorite.id} event={favorite} />;
           })}
           {cards.length === 0 && (
             <>
@@ -60,7 +53,4 @@ export function Favorites() {
       </div>
     </>
   );
-}
-function useFocusEffect(arg0: () => void) {
-  throw new Error("Function not implemented.");
 }
