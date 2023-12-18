@@ -1,9 +1,12 @@
-import { Participating } from "./screens/Participating/participating";
+import { AuthProvider } from "./contexts/auth";
+import { Login } from "./screens/Login/login";
 
 function App() {
   return (
     <>
-      <Participating />
+    <AuthProvider>
+      <Login />
+    </AuthProvider>
     </>
   );
 }
