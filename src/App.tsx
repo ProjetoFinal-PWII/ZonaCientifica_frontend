@@ -1,9 +1,9 @@
-import { Events } from "./screens/Events/events";
+import { Favorites } from "./screens/Favorites/favorites";
 
 function App() {
   return (
     <>
-      <Events />
+      <Favorites />
     </>
   );
 }
