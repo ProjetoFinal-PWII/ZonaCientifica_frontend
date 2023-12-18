@@ -1,9 +1,9 @@
-import { Favorites } from "./screens/Favorites/favorites";
+import { Participating } from "./screens/Participating/participating";
 
 function App() {
   return (
     <>
-      <Favorites />
+      <Participating />
     </>
   );
 }

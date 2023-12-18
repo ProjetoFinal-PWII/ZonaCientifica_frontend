@@ -3,8 +3,17 @@ import { Header } from "../../components/Header/header";
 import { Card } from "../../components/Card/card";
 import { cards } from "../../../data";
 import { api } from "../../utils/api";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
+type Events = {
+  _id: string;
+  title: string;
+  picture: string;
+  description: string;
+  date: string;
+  theme: string;
+  location: string;
+};
 export function Participating() {
   const [participating, setParticipating] = useState<[]>([]);
   //const context = useAuth();
@@ -12,7 +21,7 @@ export function Participating() {
   async function findParticipating() {
     try {
       api
-        .post("/getParticipatingList", { email: context.user?.email })
+        .post("/getParticipatingList", { email: "guilherme@gmail.com" })
         .then((res) => {
           const list = res.data.participatingList;
           setParticipating(list);
@@ -21,7 +30,7 @@ export function Participating() {
       console.log("ERRO: " + error);
     }
   }
-  useFocusEffect(() => {
+  useEffect(() => {
     findParticipating();
   });
   return (
@@ -30,15 +39,8 @@ export function Participating() {
       <div id="event">
         <h1>Participando</h1>
         <div id="events">
-          {cards.map((card) => {
-            return (
-              <Card
-                img={card.img}
-                tittle={card.tittle}
-                description={card.description}
-                date={card.date}
-              />
-            );
+          {participating.map((value: Events) => {
+            return <Card key={value._id} event={value} />;
           })}
           {cards.length === 0 && (
             <>
@@ -49,7 +51,4 @@ export function Participating() {
       </div>
     </>
   );
-}
-function useFocusEffect(arg0: () => void) {
-  throw new Error("Function not implemented.");
 }
