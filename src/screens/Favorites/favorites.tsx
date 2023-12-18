@@ -1,14 +1,14 @@
-import './participating.css'
-import { Header } from "../Header/header"
-import { Card } from '../Events/card';
-import { cards } from '../../../data';
+import "./favorites.css";
+import { Header } from "../../components/Header/header";
+import { Card } from "../../components/Card/card";
+import { cards } from "../../../data";
 
-export function Participating(){
+export function Favorites() {
   return (
     <>
       <Header />
       <div id="event">
-        <h1>Participando</h1>
+        <h1>Meus Favoritos</h1>
         <div id="events">
           {cards.map((card) => {
             return (
@@ -28,5 +28,5 @@ export function Participating(){
         </div>
       </div>
     </>
-  )
+  );
 }

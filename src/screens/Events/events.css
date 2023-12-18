@@ -1,0 +1,74 @@
+body {
+  background-image: url("../../assets/img/color-morph2.png");
+  background-position: 50% 60%;
+  background-size: cover;
+}
+
+#category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 47px;
+  flex-direction: column;
+}
+#categories {
+  margin-top: 30px;
+  width: 75%;
+  display: flex;
+  align-items: center;
+}
+#categories button {
+  cursor: pointer;
+  border-radius: 11px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#categories button:active {
+  cursor: grabbing;
+}
+#categories button div {
+  position: relative;
+  display: inline-block;
+}
+#categories button div figcaption {
+  position: relative;
+  margin-top: -45px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 1px 1px #000, -2px 1px #000, -2px -1px #000, 1px -1px #000;
+  font-style: normal;
+  font-family: Josefin Sans;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+#categories button div img {
+  width: 248px;
+  height: 64px;
+}
+
+#category h1,
+#event h1 {
+  color: #fff;
+  font-size: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#event {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 57px;
+  flex-direction: column;
+}
+#events {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}

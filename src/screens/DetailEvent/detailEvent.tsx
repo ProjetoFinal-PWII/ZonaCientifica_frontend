@@ -1,4 +1,4 @@
-import { Header } from "../Header/header";
+import { Header } from "../../components/Header/header";
 import "./detailEvent.css";
 import { cards } from "../../../data";
 import calendar from "../../assets/img/calendar.png";

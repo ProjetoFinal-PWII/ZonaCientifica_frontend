@@ -1,5 +1,5 @@
 import "./profile.css";
-import { Header } from "../Header/header";
+import { Header } from "../../components/Header/header";
 import picture from "../../assets/img/picture.png";
 import edit from "../../assets/img/edit.png";
 import instagram from "../../assets/img/Instagram.png";
