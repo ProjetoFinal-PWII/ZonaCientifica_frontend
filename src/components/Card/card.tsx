@@ -1,21 +1,27 @@
 import "./card.css";
 
-type Props = {
-  img: string;
-  tittle: string;
+interface Event {
+  _id: string;
+  title: string;
+  picture: string;
   description: string;
   date: string;
-};
+  location: string;
+}
+interface Props {
+  event: Event;
+}
 
-export function Card({ img, tittle, description, date }: Props) {
+export function Card({ event }: Props) {
+  console.log(event);
   return (
     <>
       <div id="card">
-        <img src={img} alt="sertao comp" />
+        <img src={event.picture} alt="sertao comp" />
         <div id="info">
-          <h3>{tittle}</h3>
-          <p>{description}</p>
-          <h5>{date}</h5>
+          <h3>{event.title}</h3>
+          <p>{event.description}</p>
+          <h5>{event.date}</h5>
         </div>
       </div>
     </>
