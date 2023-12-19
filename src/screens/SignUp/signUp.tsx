@@ -47,19 +47,19 @@ export function SignUp() {
         <img src={logo} className="logo" />
 
         <div className="input1">
-          <label className="label1">Nome completo</label>
+          <label className="labelName">Nome completo</label>
           <input type="text" {...register("name")} placeholder="Seu nome"></input>
           <p style={{ color: "red" }}>{errors.name?.message}</p>
         </div>
 
         <div className="input2">
-          <label className="label2">Email</label>
+          <label className="labelEmail">Email</label>
           <input type="text" {...register("email")} placeholder="Seu email"></input>
           <p style={{ color: "red" }}>{errors.email?.message}</p>
         </div>
 
         <div className="input3">
-          <label className="label3">Senha</label>
+          <label className="labelPassword">Senha</label>
           <input type="text" {...register("password")} placeholder="Sua senha"></input>
           <p style={{ color: "red" }}>{errors.password?.message}</p>
         </div>
