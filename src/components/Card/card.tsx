@@ -84,6 +84,7 @@ export function Card({ event }: Props) {
   function navDetailEvent() {
     navigate("/detailEvent", {
       state: {
+        eventId: event._id,
         eventPicture: event.picture,
         eventTitle: event.title,
         eventDescription: event.description,

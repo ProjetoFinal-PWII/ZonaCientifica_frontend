@@ -31,6 +31,7 @@ export function CardFavorite({ event }: Props) {
   function navDetailEvent() {
     navigate("/detailEvent", {
       state: {
+        eventId: event.id,
         eventPicture: event.picture,
         eventTitle: event.title,
         eventDescription: event.description,
