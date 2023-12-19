@@ -4,6 +4,7 @@ import { cards } from "../../../data";
 import { api } from "../../utils/api";
 import { useEffect, useState } from "react";
 import { CardFavorite } from "../../components/CardFavorite/cardFavorite";
+import { useAuth } from "../../contexts/auth";
 
 type Events = {
   id: string;
@@ -17,12 +18,12 @@ type Events = {
 
 export function Favorites() {
   const [favorites, setFavorites] = useState<Events[]>([]);
-  //const context = useAuth();
+  const context = useAuth();
 
   async function findFavorites() {
     try {
       api
-        .post("/getFavoriteList", { email: "guilherme@gmail.com" })
+        .post("/getFavoriteList", { email: context.user?.email })
         .then((res) => {
           const list = res.data.favoriteList;
           setFavorites(list);

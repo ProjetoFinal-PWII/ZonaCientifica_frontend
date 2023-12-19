@@ -3,12 +3,15 @@ import "./detailEvent.css";
 import { cards } from "../../../data";
 import calendar from "../../assets/img/calendar.png";
 import location from "../../assets/img/location.png";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../../utils/api";
+import { useAuth } from "../../contexts/auth";
+import { useLocation } from "react-router-dom";
 
 export function DetailEvent() {
   const [participating, setParticipating] = useState(false);
-  //const context = useAuth();
+  const context = useAuth();
+  const { state } = useLocation();
 
   async function findParticipating() {
     try {
@@ -17,7 +20,8 @@ export function DetailEvent() {
         .then((res) => {
           const list = res.data.participatingList;
           list.map((participating) => {
-            if (participating._id === eventId) {
+            console.log(participating);
+            if (participating._id === state.eventId) {
               setParticipating(true);
             }
           });
@@ -30,12 +34,12 @@ export function DetailEvent() {
     try {
       api.post("/addParticipating", {
         email: context.user?.email,
-        _id: eventId,
-        title: eventTitle,
-        picture: eventPicture,
-        description: eventDescription,
-        date: eventDate,
-        location: eventLocation,
+        _id: state.eventId,
+        title: state.eventTitle,
+        picture: state.eventPicture,
+        description: state.eventDescription,
+        date: state.eventDate,
+        location: state.eventLocation,
       });
     } catch (error) {
       console.log("ERRO: " + error);
@@ -45,7 +49,7 @@ export function DetailEvent() {
     try {
       api.post("/deleteParticipating", {
         email: context.user?.email,
-        _id: eventId,
+        _id: state.eventId,
       });
     } catch (error) {
       console.log("ERRO: " + error);
@@ -69,29 +73,34 @@ export function DetailEvent() {
     <>
       <Header />
       <div>
-        <h1>{cards[0].tittle}</h1>
+        <h1>{state.eventTitle}</h1>
 
         <div id="details">
-          <img src={cards[0].img2} />
+          <img src={state.eventPicture} />
 
           <div id="info">
             <div>
               <img src={calendar} />
-              <p>{cards[0].date}</p>
+              <p>{state.eventDate}</p>
             </div>
 
             <div>
               <img src={location} />
-              <p>{cards[0].location}</p>
+              <p>{state.eventLocation}</p>
             </div>
           </div>
         </div>
         <div id="description">
           <div>
             <h2>Descrição</h2>
-            <p>{cards[0].description2}</p>
+            <p>{state.eventDescription}</p>
           </div>
         </div>
+        {participating === true ? (
+          <button onClick={changeParticipating}>Cancelar participação</button>
+        ) : (
+          <button onClick={changeParticipating}>Participar</button>
+        )}
       </div>
     </>
   );

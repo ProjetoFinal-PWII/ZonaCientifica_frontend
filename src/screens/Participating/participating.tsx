@@ -4,6 +4,7 @@ import { Card } from "../../components/Card/card";
 import { cards } from "../../../data";
 import { api } from "../../utils/api";
 import { useEffect, useState } from "react";
+import { useAuth } from "../../contexts/auth";
 
 type Events = {
   _id: string;
@@ -16,12 +17,12 @@ type Events = {
 };
 export function Participating() {
   const [participating, setParticipating] = useState<[]>([]);
-  //const context = useAuth();
+  const context = useAuth();
 
   async function findParticipating() {
     try {
       api
-        .post("/getParticipatingList", { email: "guilherme@gmail.com" })
+        .post("/getParticipatingList", { email: context.user?.email })
         .then((res) => {
           const list = res.data.participatingList;
           setParticipating(list);

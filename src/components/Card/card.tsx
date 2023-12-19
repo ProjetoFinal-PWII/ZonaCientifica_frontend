@@ -3,6 +3,8 @@ import "./card.css";
 import { api } from "../../utils/api";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa6";
+import { useAuth } from "../../contexts/auth";
+import { useNavigate } from "react-router-dom";
 
 interface Event {
   _id: string;
@@ -25,12 +27,14 @@ interface Props {
 }
 
 export function Card({ event }: Props) {
+  const context = useAuth();
   const [favorite, setFavorite] = useState(false);
+  const navigate = useNavigate();
 
   async function findFavorites() {
     try {
       api
-        .post("/getFavoriteList", { email: "guilherme@gmail.com" })
+        .post("/getFavoriteList", { email: context.user?.email })
         .then((res) => {
           const list = res.data.favoriteList;
           list.map((favorite: Favorite) => {
@@ -46,7 +50,7 @@ export function Card({ event }: Props) {
   async function addFavorite() {
     try {
       api.post("/addFavorite", {
-        email: "guilherme@gmail.com",
+        email: context.user?.email,
         id: event._id,
         title: event.title,
         picture: event.picture,
@@ -61,7 +65,7 @@ export function Card({ event }: Props) {
   async function deleteFavorite() {
     try {
       api.post("/deleteFavorite", {
-        email: "guilherme@gmail.com",
+        email: context.user?.email,
         id: event._id,
       });
     } catch (error) {
@@ -77,13 +81,24 @@ export function Card({ event }: Props) {
       setFavorite(true);
     }
   }
+  function navDetailEvent() {
+    navigate("/detailEvent", {
+      state: {
+        eventPicture: event.picture,
+        eventTitle: event.title,
+        eventDescription: event.description,
+        eventDate: event.date,
+        eventLocation: event.location,
+      },
+    });
+  }
 
   useEffect(() => {
     setFavorite(false);
     findFavorites();
   }, []);
   return (
-    <>
+    <button onClick={navDetailEvent}>
       <div id="card">
         <img src={event.picture} alt="sertao comp" />
         <div id="info">
@@ -101,6 +116,6 @@ export function Card({ event }: Props) {
           </button>
         )}
       </div>
-    </>
+    </button>
   );
 }

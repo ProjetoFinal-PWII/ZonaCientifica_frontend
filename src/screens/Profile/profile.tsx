@@ -6,8 +6,17 @@ import instagram from "../../assets/img/Instagram.png";
 import twitter from "../../assets/img/Twitter.png";
 import facebook from "../../assets/img/Facebook.png";
 import likedin from "../../assets/img/LikedIn.png";
+import { useNavigate } from "react-router-dom";
 
 export function Profile() {
+  const navigate = useNavigate();
+
+  function navFavorito() {
+    navigate("/favorites");
+  }
+  function navParticipating() {
+    navigate("/participating");
+  }
   return (
     <>
       <Header />
@@ -45,8 +54,8 @@ export function Profile() {
         </div>
 
         <div className="boxButtons">
-          <button>Favoritos</button>
-          <button>Participando</button>
+          <button onClick={navFavorito}>Favoritos</button>
+          <button onClick={navParticipating}>Participando</button>
         </div>
       </div>
     </>
