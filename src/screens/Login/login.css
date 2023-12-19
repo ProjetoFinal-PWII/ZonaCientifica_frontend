@@ -31,10 +31,10 @@ body {
   padding-top: 1%;
 }
 .label1,.label2 {
+  position: absolute;
   font-family: Inter;
   font-weight: 700;
   color: #000;
-  position: fixed;
   margin-left: 0.8%;
   margin-top: 0.2%;
 }
