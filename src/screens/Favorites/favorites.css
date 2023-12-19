@@ -3,8 +3,7 @@ body {
   background-position: 50% 60%;
   background-size: cover;
 }
-#category h1,
-#event h1 {
+#category h1,#event h1 {
   color: #fff;
   font-size: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

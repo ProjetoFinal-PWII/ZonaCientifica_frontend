@@ -16,14 +16,10 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.input1,
-.input2,
-.input3 {
+.input1,.input2,.input3 {
   width: 30%;
 }
-.input1 input,
-.input2 input,
-.input3 input {
+.input1 input,.input2 input,.input3 input {
   width: 100%;
   height: 59px;
   background-color: #d9d9d9;
@@ -34,13 +30,11 @@ body {
   padding-right: 2.5%;
   padding-top: 1%;
 }
-.label1,
-.label2,
-.label3 {
+.label1,.label2,.label3 {
   font-family: Inter;
   font-weight: 700;
   color: #000;
-  position: fixed;
+  position: static;
   margin-left: 0.8%;
   margin-top: 0.2%;
 }

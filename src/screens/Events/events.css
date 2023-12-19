@@ -52,8 +52,7 @@ body {
   height: 64px;
 }
 
-#category h1,
-#event h1 {
+#category h1,#event h1 {
   color: #fff;
   font-size: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

@@ -37,8 +37,7 @@ h1 {
   align-items: center;
   margin-top: 15px;
 }
-#info div:nth-child(1) p,
-#info div:nth-child(2) p {
+#info div:nth-child(1) p,#info div:nth-child(2) p {
   font-family: "Inter", sans-serif;
   font-size: 18px;
   font-weight: 300;
