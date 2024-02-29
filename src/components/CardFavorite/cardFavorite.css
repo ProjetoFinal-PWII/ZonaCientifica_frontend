@@ -1,3 +1,6 @@
+#buttonCard{
+  display: contents;
+}
 #card {
   display: flex;
   flex-direction: row;
@@ -28,6 +31,7 @@
 #card img {
   width: 141px;
   height: 155px;
+  border-radius: 11px;
 }
 #info {
   margin: 10px;
@@ -36,6 +40,14 @@
   flex-direction: column;
   justify-content: space-between;
 }
+#buttonFavorite{
+  align-self: center;
+  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+}
 #redHeart {
   color: #ff4141;
+  width: 25px;
+  height: 25px;
 }
