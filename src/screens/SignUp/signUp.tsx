@@ -42,7 +42,6 @@ export function SignUp() {
 
   return (
     <>
-      <Header />
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <img src={logo} className="logo" />
 
