@@ -34,14 +34,15 @@ export function Login() {
 
   function onSubmit(data: FieldValues) {
     context.login(data.email, data.password);
+    console.log(context.user);
     if (context.user) {
+      console.log("entrou");
       navigate("/profile");
     } else {
       window.alert("Usuário não encontrado ou dados incorretos.");
     }
   }
 
-  
   function signUpScreen() {
     navigate("/register");
   }
@@ -53,13 +54,21 @@ export function Login() {
 
         <div className="input1">
           <label className="label1">E-mail</label>
-          <input type="text" {...register("email")} placeholder="Seu email"></input>
+          <input
+            type="text"
+            {...register("email")}
+            placeholder="Seu email"
+          ></input>
           <p style={{ color: "red" }}>{errors.email?.message}</p>
         </div>
 
         <div className="input2">
           <label className="label2">Senha</label>
-          <input type="text" {...register("password")} placeholder="Sua senha"></input>
+          <input
+            type="text"
+            {...register("password")}
+            placeholder="Sua senha"
+          ></input>
           <p style={{ color: "red" }}>{errors.password?.message}</p>
         </div>
 
