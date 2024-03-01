@@ -7,9 +7,11 @@ import twitter from "../../assets/img/Twitter.png";
 import facebook from "../../assets/img/Facebook.png";
 import likedin from "../../assets/img/LikedIn.png";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/auth";
 
 export function Profile() {
   const navigate = useNavigate();
+  const context = useAuth();
 
   function navFavorito() {
     navigate("/favorites");
@@ -23,8 +25,8 @@ export function Profile() {
       <div className="bodyProfile">
         <div className="boxProfile">
           <img src={picture} alt="picture" className="picture" />
-          <p className="name">Leonardo Mendes</p>
-          <p>@Leonardo</p>
+          <p className="name">{context.user?.name}</p>
+          <p>@{context.user?.name}</p>
           <button className="edit">
             <img src={edit} alt="edit" />
           </button>
@@ -33,8 +35,8 @@ export function Profile() {
         <div id="info">
           <div className="boxContact">
             <p>Contato</p>
-            <p>88 9 96647341</p>
-            <p>mendes.leonardo@academico.com</p>
+            <p>{context.user?.phone}</p>
+            <p>{context.user?.email}</p>
           </div>
 
           <div className="boxIcons">
