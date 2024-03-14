@@ -34,13 +34,7 @@ export function Login() {
 
   function onSubmit(data: FieldValues) {
     context.login(data.email, data.password);
-    console.log(context.user);
-    if (context.user) {
-      console.log("entrou");
-      navigate("/profile");
-    } else {
-      window.alert("Usuário não encontrado ou dados incorretos.");
-    }
+    navigate("/profile");
   }
 
   function signUpScreen() {

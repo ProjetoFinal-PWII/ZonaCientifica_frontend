@@ -21,12 +21,13 @@ export function AuthProvider({ children }: Props) {
   const [user, setUser] = useState<User | null>(null);
 
   async function isUserLogged() {
-    const savedUser = localStorage.getItem("user");
-    const savedToken = localStorage.getItem("token");
+    const savedUser = localStorage.getItem("auth.user");
+    const savedToken = localStorage.getItem("auth.token");
 
     if (savedUser && savedToken) {
       setUser(JSON.parse(savedUser));
-      api.defaults.headers.Authorization = `Bearer ${savedToken}`;
+      api.defaults.headers.common.Authorization = `Bearer ${savedToken}`;
+      //api.defaults.headers.Authorization = `Bearer ${savedToken}`;
     }
   }
 
@@ -44,15 +45,17 @@ export function AuthProvider({ children }: Props) {
 
   async function login(email: string, password: string) {
     try {
-      await api.post("/login", { email, password }).then((response)=>{
+      await api.post("/login", { email, password }).then((response) => {
+        const user = response.data as User;
+        setUser(user);
         api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
-        setUser(response.data);
-        localStorage.setItem("user", JSON.stringify(response.data));
-        localStorage.setItem("auth.token", response.data.token);
+        //console.log(response.data);
+        //localStorage.setItem("user", JSON.stringify(response.data));
         localStorage.setItem("auth.user", JSON.stringify(user));
-      })
+        localStorage.setItem("auth.token", response.data.token);
+      });
     } catch (error) {
-      console.log(error);
+      window.alert("Usuário não encontrado ou dados incorretos.");
     }
   }
 
@@ -61,8 +64,8 @@ export function AuthProvider({ children }: Props) {
 
     localStorage.removeItem("user");
     localStorage.removeItem("token");
-    localStorage.removeItem('auth.token');
-    localStorage.removeItem('auth.user');
+    localStorage.removeItem("auth.token");
+    localStorage.removeItem("auth.user");
   }
 
   return (
