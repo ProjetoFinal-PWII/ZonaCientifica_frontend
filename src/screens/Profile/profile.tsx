@@ -32,7 +32,7 @@ export function Profile() {
           </button>
         </div>
 
-        <div id="info">
+        <div id="informations">
           <div className="boxContact">
             <p>Contato</p>
             <p>{context.user?.phone}</p>
