@@ -59,7 +59,7 @@ export function Login() {
         <div className="input2">
           <label className="label2">Senha</label>
           <input
-            type="text"
+            type="password"
             {...register("password")}
             placeholder="Sua senha"
           ></input>
