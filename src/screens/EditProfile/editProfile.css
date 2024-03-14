@@ -4,6 +4,10 @@
   align-items: center;
   margin-bottom: 60px;
 }
+#bodyPageEditProfile{
+  background-color: #FFF;
+  background-size: cover;
+}
 .boxEditProfile {
   display: flex;
   flex-direction: column;

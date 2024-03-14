@@ -35,7 +35,7 @@ export function Participating() {
     findParticipating();
   });
   return (
-    <>
+    <div id="bodyPageParticipating">
       <Header />
       <div id="event">
         <h1>Participando</h1>
@@ -50,6 +50,6 @@ export function Participating() {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

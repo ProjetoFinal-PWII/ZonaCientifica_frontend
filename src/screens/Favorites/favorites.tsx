@@ -37,7 +37,7 @@ export function Favorites() {
     findFavorites();
   });
   return (
-    <>
+    <div id="bodyPageFavorites">
       <Header />
       <div id="event">
         <h1>Meus Favoritos</h1>
@@ -52,6 +52,6 @@ export function Favorites() {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -20,7 +20,7 @@ export function Profile() {
     navigate("/participating");
   }
   return (
-    <>
+    <div id="bodyPageProfile">
       <Header />
       <div className="bodyProfile">
         <div className="boxProfile">
@@ -60,6 +60,6 @@ export function Profile() {
           <button onClick={navParticipating}>Participando</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

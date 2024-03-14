@@ -37,7 +37,7 @@ export function Events() {
   }, []);
 
   return (
-    <>
+    <div id="bodyPageEvents">
       <Header />
       <div id="category">
         <h1>Categorias</h1>
@@ -69,6 +69,6 @@ export function Events() {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

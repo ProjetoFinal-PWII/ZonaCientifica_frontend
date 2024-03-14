@@ -42,7 +42,7 @@ export function Login() {
   }
 
   return (
-    <>
+    <div id="bodyPageLogin">
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <img src={logo} className="logo" />
 
@@ -73,6 +73,6 @@ export function Login() {
           <p>Clique aqui para Cadastrar-se!</p>
         </a>
       </form>
-    </>
+    </div>
   );
 }

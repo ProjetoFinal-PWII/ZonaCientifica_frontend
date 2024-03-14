@@ -1,7 +1,8 @@
-body {
+#bodyPageLogin {
   background-image: url("../../assets/img/color-morph.png");
   background-position: 10% 50%;
   background-size: cover;
+  
 }
 .logo {
   width: 6%;
@@ -50,6 +51,7 @@ body {
   font-family: Inter;
   font-weight: 700;
   box-sizing: content-box;
+  cursor: pointer;
 }
 #form a {
   text-align: center;
@@ -59,4 +61,5 @@ body {
   font-weight: 300;
   font-size: 110%;
   text-decoration: none;
+  cursor: pointer;
 }
