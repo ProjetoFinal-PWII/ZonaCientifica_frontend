@@ -6,7 +6,7 @@ import checkCircle from "../../assets/img/check-circle.png";
 
 export function EditProfile() {
   return (
-    <>
+    <div id="bodyPageEditProfile">
       <Header />
       <div className="body">
         <div className="boxEditProfile">
@@ -54,6 +54,6 @@ export function EditProfile() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

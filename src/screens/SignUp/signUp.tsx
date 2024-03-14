@@ -1,7 +1,6 @@
 import "./signUp.css";
 import logo from "../../assets/img/Logo.png";
 import { useNavigate } from "react-router-dom";
-import { Header } from "../../components/Header/header";
 import { useForm, FieldValues } from "react-hook-form";
 import { useAuth } from "../../contexts/auth";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -41,7 +40,7 @@ export function SignUp() {
   }
 
   return (
-    <>
+    <div id="bodyPageSignUp">
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <img src={logo} className="logo" />
 
@@ -70,6 +69,6 @@ export function SignUp() {
           <p>Clique aqui para entrar!</p>
         </a>
       </form>
-    </>
+    </div>
   );
 }

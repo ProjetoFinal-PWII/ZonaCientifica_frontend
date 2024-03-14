@@ -1,6 +1,5 @@
 import { Header } from "../../components/Header/header";
 import "./detailEvent.css";
-import { cards } from "../../../data";
 import calendar from "../../assets/img/calendar.png";
 import location from "../../assets/img/location.png";
 import { useEffect, useState } from "react";
@@ -70,7 +69,7 @@ export function DetailEvent() {
     findParticipating();
   }, []);
   return (
-    <>
+    <div id="bodyPageDetailEvent">
       <Header />
       <div>
         <h1>{state.eventTitle}</h1>
@@ -102,6 +101,6 @@ export function DetailEvent() {
           <button onClick={changeParticipating}>Participar</button>
         )}
       </div>
-    </>
+    </div>
   );
 }
