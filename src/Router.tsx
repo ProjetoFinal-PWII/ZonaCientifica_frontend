@@ -22,8 +22,8 @@ export function Router() {
         </Route>
       ) : (
         <Route>
-          <Route path="/" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />z
           <Route path="/events" element={<Events />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/participating" element={<Participating />} />
