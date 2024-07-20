@@ -20,6 +20,9 @@
   margin-top: 57px;
   flex-direction: column;
 }
+#event h1{
+  margin-top: 0;
+}
 #events {
   margin-top: 50px;
   display: flex;
