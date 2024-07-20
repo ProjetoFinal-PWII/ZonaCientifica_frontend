@@ -1,7 +1,6 @@
 import "./participating.css";
 import { Header } from "../../components/Header/header";
 import { Card } from "../../components/Card/card";
-import { cards } from "../../../data";
 import { api } from "../../utils/api";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../contexts/auth";
@@ -43,9 +42,10 @@ export function Participating() {
           {participating.map((value: Events) => {
             return <Card key={value._id} event={value} />;
           })}
-          {cards.length === 0 && (
+          {participating.length === 0 && (
             <>
-              <h3>Sem eventos.</h3>
+              <h2>Você não está em nenhum evento ainda.
+              Participe de um!</h2>
             </>
           )}
         </div>

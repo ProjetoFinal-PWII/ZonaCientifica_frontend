@@ -1,6 +1,5 @@
 import "./favorites.css";
 import { Header } from "../../components/Header/header";
-import { cards } from "../../../data";
 import { api } from "../../utils/api";
 import { useEffect, useState } from "react";
 import { CardFavorite } from "../../components/CardFavorite/cardFavorite";
@@ -45,9 +44,9 @@ export function Favorites() {
           {favorites.map((favorite) => {
             return <CardFavorite key={favorite.id} event={favorite} />;
           })}
-          {cards.length === 0 && (
+          {favorites.length === 0 && (
             <>
-              <h3>Sem eventos.</h3>
+              <h2>Você ainda não tem eventos favoritos. Favorite algum evento!</h2>
             </>
           )}
         </div>
