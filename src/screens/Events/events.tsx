@@ -32,6 +32,18 @@ export function Events() {
     }
   }
 
+  async function findTheme(theme: string){
+    const array = []
+    events.forEach((event) => {
+      if(event.theme == theme){
+        array.push(event)
+      }
+    })
+    if(array.length > 0){
+      setEvents(array)
+    }
+  }
+
   useEffect(() => {
     findEvents();
   }, []);
@@ -45,7 +57,7 @@ export function Events() {
           <Swiper slidesPerView={4} spaceBetween={5} navigation>
             {categories.map((category) => (
               <SwiperSlide>
-                <button>
+                <button onClick={() => {findTheme(category.type)}}>
                   <div>
                     <img src={category.img} />
                     <figcaption>{category.type}</figcaption>
