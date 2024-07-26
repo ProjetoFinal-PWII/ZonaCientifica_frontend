@@ -1,4 +1,4 @@
-#bodyPageParticipating {
+#bodyPageParticipating{
   background-image: url("../../assets/img/color-morph2.png");
   background-position: 50% 60%;
   background-size: cover;
@@ -13,24 +13,24 @@
   font-size: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-#event {
+#participating {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 57px;
   flex-direction: column;
 }
-#event h1{
+#participating h1{
   margin-top: 0;
 }
-#events {
+#eventParticipating {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
 }
-#events h2{
+#eventParticipating h2{
   color: #fff;
   font-family: Inter;
   font-weight: 400;

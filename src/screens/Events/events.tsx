@@ -32,15 +32,15 @@ export function Events() {
     }
   }
 
-  async function findTheme(theme: string){
-    const array = []
+  async function findTheme(theme: string) {
+    const array = [];
     events.forEach((event) => {
-      if(event.theme == theme){
-        array.push(event)
+      if (event.theme == theme) {
+        array.push(event);
       }
-    })
-    if(array.length > 0){
-      setEvents(array)
+    });
+    if (array.length > 0) {
+      setEvents(array);
     }
   }
 
@@ -49,38 +49,44 @@ export function Events() {
   }, []);
 
   return (
-    <div id="bodyPageEvents">
+    <>
       <Header />
-      <div id="category">
-        <h1>Categorias</h1>
-        <div id="categories">
-          <Swiper slidesPerView={4} spaceBetween={5} navigation>
-            {categories.map((category) => (
-              <SwiperSlide>
-                <button onClick={() => {findTheme(category.type)}}>
-                  <div>
-                    <img src={category.img} />
-                    <figcaption>{category.type}</figcaption>
-                  </div>
-                </button>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+      <div id="bodyPageEvents">
+        <div id="category">
+          <h1>Categorias</h1>
+          <div id="categories">
+            <Swiper slidesPerView={4} spaceBetween={5} navigation>
+              {categories.map((category) => (
+                <SwiperSlide>
+                  <button
+                    onClick={() => {
+                      findTheme(category.type);
+                    }}
+                  >
+                    <div>
+                      <img src={category.img} />
+                      <figcaption>{category.type}</figcaption>
+                    </div>
+                  </button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+        <div id="event">
+          <h1>Eventos</h1>
+          <div id="events">
+            {events.map((event) => {
+              return <Card key={event._id} event={event} />;
+            })}
+            {cards.length === 0 && (
+              <>
+                <h3>Sem eventos.</h3>
+              </>
+            )}
+          </div>
         </div>
       </div>
-      <div id="event">
-        <h1>Eventos</h1>
-        <div id="events">
-          {events.map((event) => {
-            return <Card key={event._id} event={event} />;
-          })}
-          {cards.length === 0 && (
-            <>
-              <h3>Sem eventos.</h3>
-            </>
-          )}
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
