@@ -1,4 +1,4 @@
-#bodyPageFavorites {
+#bodyPageFavorites{
   display: flex;
   flex-direction: column;
   background-image: url("../../assets/img/color-morph2.png");
@@ -11,24 +11,24 @@
   font-size: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-#favorite {
+#favorites {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 57px;
   flex-direction: column;
 }
-#favorite h1{
+#favorites h1{
   margin-top: 0;
 }
-#favorites {
+#eventFavorite {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
 }
-#favorites h2{
+#eventFavorite h2{
   color: #fff;
   font-family: Inter;
   font-weight: 400;

@@ -38,7 +38,7 @@ export function Participating() {
       <Header />
       <div id="participating">
         <h1>Participando</h1>
-        <div id="participants">
+        <div id="eventParticipating">
           {participating.map((value: Events) => {
             return <Card key={value._id} event={value} />;
           })}

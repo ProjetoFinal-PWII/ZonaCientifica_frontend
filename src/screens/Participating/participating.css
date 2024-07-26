@@ -1,4 +1,4 @@
-#bodyPageParticipating {
+#bodyPageParticipating{
   display: flex;
   flex-direction: column;
   background-image: url("../../assets/img/color-morph2.png");
@@ -21,14 +21,14 @@
 #participating h1{
   margin-top: 0;
 }
-#participants {
+#eventParticipating {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
 }
-#participants h2{
+#eventParticipating h2{
   color: #fff;
   font-family: Inter;
   font-weight: 400;
