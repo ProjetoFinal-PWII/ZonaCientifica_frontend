@@ -38,9 +38,9 @@ export function Favorites() {
   return (
     <div id="bodyPageFavorites">
       <Header />
-      <div id="event">
+      <div id="favorite">
         <h1>Meus Favoritos</h1>
-        <div id="events">
+        <div id="favorites">
           {favorites.map((favorite) => {
             return <CardFavorite key={favorite.id} event={favorite} />;
           })}
