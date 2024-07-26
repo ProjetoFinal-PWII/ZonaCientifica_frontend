@@ -1,10 +1,12 @@
 #bodyPageFavorites{
+  display: flex;
+  flex-direction: column;
   background-image: url("../../assets/img/color-morph2.png");
   background-position: 50% 60%;
   background-size: cover;
-  background-clip: padding-box;
+  min-height: 100vh;
 }
-#category h1,#event h1 {
+#category h1,#favorite h1 {
   color: #fff;
   font-size: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
