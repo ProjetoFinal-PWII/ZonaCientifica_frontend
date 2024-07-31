@@ -21,11 +21,13 @@ type Events = {
 
 export function Events() {
   const [events, setEvents] = useState<Events[]>([]);
+  const [events2, setEvents2] = useState<Events[]>([]);
 
   async function findEvents() {
     try {
       api.get("/events").then((res) => {
         setEvents(res.data);
+        setEvents2(res.data);
       });
     } catch (error) {
       console.log("ERRO: " + error);
@@ -33,8 +35,8 @@ export function Events() {
   }
 
   async function findTheme(theme: string) {
-    const array = [];
-    events.forEach((event) => {
+    const array : Events[] = [];
+    events2.forEach((event) => {
       if (event.theme == theme) {
         array.push(event);
       }
