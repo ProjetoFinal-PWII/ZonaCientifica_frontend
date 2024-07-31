@@ -1,7 +1,7 @@
 import { Header } from "../../components/Header/header";
 import "./events.css";
 import { Card } from "../../components/Card/card";
-import { categories, cards } from "../../../data";
+import { categories } from "../../../data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { api } from "../../utils/api";
 import "swiper/css";
@@ -9,6 +9,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useEffect, useState } from "react";
+import { Categorie } from "../../components/Categorie/categorie";
+
 type Events = {
   _id: string;
   title: string;
@@ -25,7 +27,7 @@ export function Events() {
 
   async function findEvents() {
     try {
-      api.get("/events").then((res) => {
+       api.get("/events").then((res) => {
         setEvents(res.data);
         setEvents2(res.data);
       });
@@ -60,16 +62,7 @@ export function Events() {
             <Swiper slidesPerView={4} spaceBetween={5} navigation>
               {categories.map((category) => (
                 <SwiperSlide>
-                  <button
-                    onClick={() => {
-                      findTheme(category.type);
-                    }}
-                  >
-                    <div>
-                      <img src={category.img} />
-                      <figcaption>{category.type}</figcaption>
-                    </div>
-                  </button>
+                  <Categorie category={category} findTheme={findTheme}/>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -78,14 +71,17 @@ export function Events() {
         <div id="event">
           <h1>Eventos</h1>
           <div id="events">
-            {events.map((event) => {
-              return <Card key={event._id} event={event} />;
-            })}
-            {cards.length === 0 && (
-              <>
-                <h3>Sem eventos.</h3>
-              </>
-            )}
+            {
+              events.length > 0 ? (
+                events.map((event) => {
+                  return <Card key={event._id} event={event}/>
+                })
+              ) : (
+                <>
+                  <h3>Sem eventos.</h3>
+                </>
+              )
+            }
           </div>
         </div>
       </div>
