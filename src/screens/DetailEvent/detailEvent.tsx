@@ -87,6 +87,15 @@ export function DetailEvent() {
               <img src={location} />
               <p>{state.eventLocation}</p>
             </div>
+            <div id="buttonParticipate">
+              {participating === true ? (
+                <button className="activated" onClick={changeParticipating}>
+                  Cancelar participação
+                </button>
+              ) : (
+                <button className="disabled" onClick={changeParticipating}>Participar</button>
+              )}
+            </div>
           </div>
         </div>
         <div id="description">
@@ -95,11 +104,6 @@ export function DetailEvent() {
             <p>{state.eventDescription}</p>
           </div>
         </div>
-        {participating === true ? (
-          <button onClick={changeParticipating}>Cancelar participação</button>
-        ) : (
-          <button onClick={changeParticipating}>Participar</button>
-        )}
       </div>
     </div>
   );
