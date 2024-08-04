@@ -99,24 +99,24 @@ export function Card({ event }: Props) {
     findFavorites();
   }, []);
   return (
-    <button id="buttonCard" onClick={navDetailEvent}>
-      <div id="card">
+    <div id="card">
+      <button id="buttonCard" onClick={navDetailEvent}>
         <img src={event.picture} alt="" />
         <div id="info">
           <h3>{event.title}</h3>
           <p>{event.description}</p>
           <h5>{event.date}</h5>
         </div>
-        {favorite === true ? (
-          <button id="buttonFavorite" onClick={changeFavorite}>
-            <FaHeart id="redHeart" />
-          </button>
-        ) : (
-          <button id="buttonFavorite" onClick={changeFavorite}>
-            <CiHeart id="heart" />
-          </button>
-        )}
-      </div>
-    </button>
+      </button>
+      {favorite === true ? (
+        <button id="buttonFavorite" onClick={changeFavorite}>
+          <FaHeart id="redHeart" />
+        </button>
+      ) : (
+        <button id="buttonFavorite" onClick={changeFavorite}>
+          <CiHeart id="heart" />
+        </button>
+      )}
+    </div>
   );
 }
