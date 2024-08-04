@@ -41,18 +41,18 @@ export function CardFavorite({ event }: Props) {
     });
   }
   return (
-    <button id="buttonCard" onClick={navDetailEvent}>
-      <div id="card">
+    <div id="cardFavorite">
+      <button id="buttonCard" onClick={navDetailEvent}>
         <img src={event.picture} alt="sertao comp" />
-        <div id="info">
+        <div id="infoFavorite">
           <h3>{event.title}</h3>
           <p>{event.description}</p>
           <h5>{event.date}</h5>
         </div>
-        <button id="buttonFavorite" onClick={deleteFavorite}>
-          <FaHeart id="redHeart" />
-        </button>
-      </div>
-    </button>
+      </button>
+      <button id="buttonCardFavorite" onClick={deleteFavorite}>
+        <FaHeart id="redHeart" />
+      </button>
+    </div>
   );
 }
