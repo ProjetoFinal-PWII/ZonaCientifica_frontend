@@ -16,6 +16,7 @@ type Events = {
 };
 export function Participating() {
   const [participating, setParticipating] = useState<[]>([]);
+  const [loading, setLoading] = useState(true);
   const context = useAuth();
 
   async function findParticipating() {
@@ -25,14 +26,21 @@ export function Participating() {
         .then((res) => {
           const list = res.data.participatingList;
           setParticipating(list);
+          setLoading(false);
         });
     } catch (error) {
       console.log("ERRO: " + error);
+      setLoading(false);
     }
   }
   useEffect(() => {
     findParticipating();
   });
+
+  if(loading){
+    return
+  }
+  
   return (
     <div id="bodyPageParticipating">
       <Header />

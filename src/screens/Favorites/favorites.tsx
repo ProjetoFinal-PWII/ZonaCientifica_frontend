@@ -17,6 +17,7 @@ type Events = {
 
 export function Favorites() {
   const [favorites, setFavorites] = useState<Events[]>([]);
+  const [loading, setLoading] = useState(true);
   const context = useAuth();
 
   async function findFavorites() {
@@ -26,15 +27,22 @@ export function Favorites() {
         .then((res) => {
           const list = res.data.favoriteList;
           setFavorites(list);
+          setLoading(false);
         });
     } catch (error) {
       console.log("ERRO: " + error);
+      setLoading(false);
     }
   }
 
   useEffect(() => {
     findFavorites();
   });
+
+  if(loading) {
+    return
+  }
+
   return (
     <div id="bodyPageFavorites">
       <Header />
