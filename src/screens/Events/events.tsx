@@ -22,23 +22,25 @@ type Events = {
 };
 
 export function Events() {
-  const [events, setEvents] = useState<Events[]>([]);
-  const [events2, setEvents2] = useState<Events[]>([]);
+  const [events, setEvents] = useState<Events[]>([] as Events[]);
+  const [eventsCategorie, setEventsCategorie] = useState<Events[]>([]);
+  const [loading, setLoading] = useState(true);
 
   async function findEvents() {
     try {
-       api.get("/events").then((res) => {
-        setEvents(res.data);
-        setEvents2(res.data);
-      });
+       const response = await api.get("/events");
+       setEvents(response.data);
+       setEventsCategorie(response.data);
+       setLoading(false);
     } catch (error) {
       console.log("ERRO: " + error);
+      setLoading(false);
     }
   }
 
   async function findTheme(theme: string) {
     const array : Events[] = [];
-    events2.forEach((event) => {
+    eventsCategorie.forEach((event) => {
       if (event.theme == theme) {
         array.push(event);
       }
@@ -46,12 +48,19 @@ export function Events() {
     if (array.length > 0) {
       setEvents(array);
     }
+    if(array.length === 0){
+      setEvents([])
+    }
   }
 
   useEffect(() => {
     findEvents();
   }, []);
 
+  if(loading) {
+    return
+  }
+  
   return (
     <>
       <Header />
@@ -77,9 +86,7 @@ export function Events() {
                   return <Card key={event._id} event={event}/>
                 })
               ) : (
-                <>
                   <h3>Sem eventos.</h3>
-                </>
               )
             }
           </div>
