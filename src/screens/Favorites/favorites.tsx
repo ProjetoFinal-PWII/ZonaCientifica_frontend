@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./favorites.css";
 import { Header } from "../../components/Header/header";
 import { api } from "../../utils/api";
@@ -16,7 +17,7 @@ type Events = {
 };
 
 export function Favorites() {
-  const [favorites, setFavorites] = useState<Events[]>([]);
+  const [favorites, setFavorites] = useState<Events[] | null>(null);
   const [loading, setLoading] = useState(true);
   const context = useAuth();
 
@@ -27,21 +28,18 @@ export function Favorites() {
         .then((res) => {
           const list = res.data.favoriteList;
           setFavorites(list);
-          setLoading(false);
         });
     } catch (error) {
       console.log("ERRO: " + error);
-      setLoading(false);
     }
   }
 
   useEffect(() => {
     findFavorites();
-  });
-
-  if(loading) {
-    return
-  }
+    if(favorites){
+      setLoading(false);
+    }
+  }, [favorites]);
 
   return (
     <div id="bodyPageFavorites">
@@ -49,14 +47,21 @@ export function Favorites() {
       <div id="favorites">
         <h1>Meus Favoritos</h1>
         <div id="eventFavorite">
-          {favorites.map((favorite) => {
-            return <CardFavorite key={favorite.id} event={favorite} />;
-          })}
-          {favorites.length === 0 && (
-            <>
-              <h2>Você ainda não tem eventos favoritos. Favorite algum evento!</h2>
-            </>
-          )}
+          {loading?
+            (<h1>carregando...</h1>)
+            : (
+
+                favorites!.length > 0 ? (
+                favorites!.map((favorite) => {
+                  return <CardFavorite key={favorite.id} event={favorite} />;
+                })  
+              ) : (
+                <h2>Você ainda não tem eventos favoritos. Favorite algum evento!</h2>
+              )
+        
+            )
+          }
+      
         </div>
       </div>
     </div>
