@@ -15,7 +15,7 @@ type Events = {
   location: string;
 };
 export function Participating() {
-  const [participating, setParticipating] = useState<[]>([]);
+  const [participating, setParticipating] = useState<Events[] | null>(null);
   const [loading, setLoading] = useState(true);
   const context = useAuth();
 
@@ -35,11 +35,10 @@ export function Participating() {
   }
   useEffect(() => {
     findParticipating();
-  });
-
-  if(loading){
-    return
-  }
+    if(participating){
+      setLoading(false)
+    }
+  }, [participating]);
   
   return (
     <div id="bodyPageParticipating">
@@ -47,15 +46,20 @@ export function Participating() {
       <div id="participating">
         <h1>Participando</h1>
         <div id="eventParticipating">
-          {participating.map((value: Events) => {
-            return <Card key={value._id} event={value} />;
-          })}
-          {participating.length === 0 && (
-            <>
-              <h2>Você não está em nenhum evento ainda.
-              Participe de um!</h2>
-            </>
-          )}
+          {loading ?
+            (<h1>carregando...</h1>)
+            :
+            (
+              participating!.length > 0 ? (
+                participating!.map((value: Events) => {
+                  return <Card key={value._id} event={value} />;
+                })
+              ) : (
+                <h2>Você não está em nenhum evento ainda.
+                Participe de um!</h2>
+              )
+            )
+          }
         </div>
       </div>
     </div>
