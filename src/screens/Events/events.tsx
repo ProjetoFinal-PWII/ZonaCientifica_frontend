@@ -78,7 +78,7 @@ export function Events() {
         <div id="event">
           <h1>Eventos</h1>
           {loading ?
-            (<h1>carregando...</h1>)
+            <div id="loadingPageEvents"></div>
 
             :
             (

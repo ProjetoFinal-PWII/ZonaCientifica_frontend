@@ -27,7 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 57px;
+  margin-top: 10px;
   flex-direction: column;
 }
 #events {
@@ -36,4 +36,23 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+}
+#loadingPageEvents{
+  margin-top: 50px;
+  display: block;
+  border: 7px solid #FFF;
+  border-right: 7px solid transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: loading 0.7s ease-out infinite;
+}
+@keyframes loading {
+  0%{
+    transform: rotate(0deg);
+    box-shadow: 1px 2px 20px #b6b6b6;
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }

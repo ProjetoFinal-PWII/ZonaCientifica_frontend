@@ -47,7 +47,7 @@ export function Participating() {
         <h1>Participando</h1>
         <div id="eventParticipating">
           {loading ?
-            (<h1>carregando...</h1>)
+            <div id="loadingPageParticipating"></div>
             :
             (
               participating!.length > 0 ? (

@@ -48,7 +48,7 @@ export function Favorites() {
         <h1>Meus Favoritos</h1>
         <div id="eventFavorite">
           {loading?
-            (<h1>carregando...</h1>)
+            <div id="loadingPageFavorites"></div>
             : (
 
                 favorites!.length > 0 ? (
