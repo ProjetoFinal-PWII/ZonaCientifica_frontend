@@ -19,6 +19,10 @@ export function Profile() {
   function navParticipating() {
     navigate("/participating");
   }
+  function navEditProfile() {
+    navigate("/editProfile");
+  }
+  
   return (
     <div id="bodyPageProfile">
       <Header />
@@ -27,7 +31,7 @@ export function Profile() {
           <img src={picture} alt="picture" className="picture" />
           <p className="name">{context.user?.name}</p>
           <p>@{context.user?.name}</p>
-          <button className="edit">
+          <button className="edit" onClick={navEditProfile}>
             <img src={edit} alt="edit" />
           </button>
         </div>

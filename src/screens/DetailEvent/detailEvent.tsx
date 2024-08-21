@@ -1,6 +1,6 @@
 import { Header } from "../../components/Header/header";
 import "./detailEvent.css";
-import calendar from "../../assets/img/calendar.png";
+import calendar_white from "../../assets/img/calendar_white.png";
 import location from "../../assets/img/location.png";
 import { useEffect, useState } from "react";
 import { api } from "../../utils/api";
@@ -79,7 +79,7 @@ export function DetailEvent() {
 
           <div id="info">
             <div>
-              <img src={calendar} />
+              <img src={calendar_white} />
               <p>{state.eventDate}</p>
             </div>
 

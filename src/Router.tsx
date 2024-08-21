@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { useAuth } from "./contexts/auth";
 import { Profile } from "./screens/Profile/profile";
+import { EditProfile } from "./screens/EditProfile/editProfile";
 import { Login } from "./screens/Login/login";
 import { SignUp } from "./screens/SignUp/signUp";
 import { Events } from "./screens/Events/events";
@@ -23,7 +24,8 @@ export function Router() {
       ) : (
         <Route>
           <Route path="/" element={<Profile />} />
-          <Route path="/profile" element={<Profile />} />z
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/editProfile" element={<EditProfile/>} />
           <Route path="/events" element={<Events />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/participating" element={<Participating />} />
