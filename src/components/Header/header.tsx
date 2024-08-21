@@ -29,15 +29,32 @@ export function Header() {
     context.logout();
     navigate("/");
   }
+  function toogle(){
+    const menuLateral = document.getElementById("menuLateral"); 
+    const buttons = document.getElementById("buttons");
+
+    if(menuLateral?.className === "collapsedMenu"){
+      menuLateral?.classList.remove("collapsedMenu");
+      menuLateral?.classList.add("expandedMenu");
+      buttons?.classList.remove("buttonsOff");
+      buttons?.classList.add("buttonsOn");
+    } else{
+      menuLateral?.classList.remove("expandedMenu");
+      menuLateral?.classList.add("collapsedMenu");
+      buttons?.classList.remove("buttonsOn");
+      buttons?.classList.add("buttonsOff");
+    }
+  }
+
   return (
     <>
       <header id="header">
-        <div id="menuLateral">
+        <div id="menuLateral" className="collapsedMenu">
           <label htmlFor="toogle">
             <img src={bars} />
           </label>
-          <input id="toogle" type="checkbox" name="menu" />
-          <div id="buttons">
+          <input id="toogle" type="checkbox" name="menu" onClick={toogle}/>
+          <div id="buttons" className="buttonsOff">
             <nav>
               <ul>
                 <li>
@@ -76,15 +93,6 @@ export function Header() {
           <img src={logo} />
         </a>
       </header>
-      {/*<header id="header">
-        <button onClick={navEvents}>Eventos</button>
-        <button onClick={navFavorito}>Favoritos</button>
-        <button onClick={navParticipating}>Participando</button>
-        <button onClick={logout}>Sair</button>
-        <a href="">
-          <img src={logo} />
-        </a>
-      </header>*/}
     </>
   );
 }
