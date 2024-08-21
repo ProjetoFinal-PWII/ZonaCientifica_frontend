@@ -1,3 +1,46 @@
+@keyframes toogleMenu {
+    0%{
+        width: 65px;
+        height: 64px;
+    }
+    25%{
+        width: 100px;
+        height: 100px;
+        border-bottom-right-radius: 100%;
+    }
+    50%{
+        width: 180px;
+        height: 250px;
+        border-bottom-right-radius: 70%;
+    }
+    70%{
+        width: 220px;
+        height: 400px;
+        border-bottom-right-radius: 50%;
+    }
+    80%{
+        border-bottom-right-radius: 40%;
+    }
+    90%{
+        border-bottom-right-radius: 20%;
+    }
+    100%{
+        width: 240px;
+        height: 540px;
+        border-bottom-right-radius: 0%;
+    }
+}
+@keyframes toogleButtonsMenu {
+    0%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 #header{
     background-position: 60%;
     width: 100%;
@@ -33,17 +76,40 @@
 #toogle{
     display: none;
 }
-#toogle + #buttons nav ul{
+.collapsedMenu > #buttons nav ul{
     display: none;
 }
-#toogle:checked + #buttons nav ul{
-    display: contents;
+.expandedMenu{
+    width: 240px;
+    height: 540px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    animation: toogleMenu 0.7s normal linear;
+}
+.buttonsOn > nav ul li:nth-child(1){
+    animation: toogleButtonsMenu 1.2s normal linear;
+}
+.buttonsOn > nav ul li:nth-child(2){
+    animation: toogleButtonsMenu 1.4s normal linear;
+}
+.buttonsOn > nav ul li:nth-child(3){
+    animation: toogleButtonsMenu 1.6s normal linear;
+}
+.buttonsOn > nav ul li:nth-child(4){
+    animation: toogleButtonsMenu 1.8s normal linear;
+}
+.buttonsOn > nav ul li:nth-child(5){
+    animation: toogleButtonsMenu 2s normal linear;
+}
+.buttonsOn > nav ul li:nth-child(6){
+    animation: toogleButtonsMenu 2.2s normal linear;
 }
 #buttons nav ul li button{
     border: 0;
-    background-color: #D9D9D9;
+    background-color: transparent;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 #buttons nav ul li button img{
     margin-right: 16px;
@@ -55,7 +121,7 @@
     height: 35px;
 }
 #menuLateral nav ul li:nth-child(1){
-    margin-top: 60%;
+    margin-top: 30%;
 }
 #menuLateral nav ul li:nth-child(5){
     margin-top: 50%;
