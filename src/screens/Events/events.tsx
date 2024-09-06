@@ -23,32 +23,27 @@ type Events = {
 
 export function Events() {
   const [events, setEvents] = useState<Events[] | null>(null);
-  const [eventsCategorie, setEventsCategorie] = useState<Events[]>([]);
+  //const [eventsCategorie, setEventsCategorie] = useState<Events[]>([]);
   const [loading, setLoading] = useState(true);
-
+  const [theme, setTheme] = useState('');
+  
   async function findEvents() {
     try {
       const response = await api.get("/events");
       setEvents(response.data);
-      setEventsCategorie(response.data);
+      //setEventsCategorie(response.data);
     } catch (error) {
       console.log("ERRO: " + error);
     }
   }
-
+ 
+  const eventsCategorie = events?.length > 0 ?
+    events?.filter((event) => event.theme == theme)
+    : [];
+  
   async function findTheme(theme: string) {
-    const array: Events[] = [];
-    eventsCategorie.forEach((event) => {
-      if (event.theme == theme) {
-        array.push(event);
-      }
-    });
-    if (array.length > 0) {
-      setEvents(array);
-    }
-    if (array.length === 0) {
-      setEvents([])
-    }
+    setTheme(theme);
+    console.log(eventsCategorie);
   }
 
   useEffect(() => {
@@ -81,19 +76,34 @@ export function Events() {
             <div id="loadingPageEvents"></div>
 
             :
-            (
-              <div id="events">
-                {
-                  events!.length > 0 ? (
-                    events!.map((event) => {
-                      return <Card key={event._id} event={event} />
-                    })
-                  ) : (
-                    <h3>Sem eventos.</h3>
-                  )
-                }
-              </div>
-            )
+            theme != '' ?
+              (
+                <div id="events">
+                  {
+                    eventsCategorie!.length > 0 ? (
+                      eventsCategorie!.map((event) => {
+                        return <Card key={event._id} event={event} />
+                      })
+                    ) : (
+                      <h3>Sem eventos nesta categoria.</h3>
+                    )
+                  }
+                </div>
+              )
+              :
+              (
+                <div id="events">
+                  {
+                    events!.length > 0 ? (
+                      events!.map((event) => {
+                        return <Card key={event._id} event={event} />
+                      })
+                    ) : (
+                      <h3>Sem eventos.</h3>
+                    )
+                  }
+                </div>
+              )
           }
         </div>
       </div>
