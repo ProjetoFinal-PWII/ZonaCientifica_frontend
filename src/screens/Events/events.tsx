@@ -25,8 +25,8 @@ export function Events() {
   const [events, setEvents] = useState<Events[] | null>(null);
   //const [eventsCategorie, setEventsCategorie] = useState<Events[]>([]);
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useState('');
-  
+  const [theme, setTheme] = useState("");
+
   async function findEvents() {
     try {
       const response = await api.get("/events");
@@ -36,11 +36,10 @@ export function Events() {
       console.log("ERRO: " + error);
     }
   }
- 
-  const eventsCategorie = events?.length > 0 ?
-    events?.filter((event) => event.theme == theme)
-    : [];
-  
+
+  const eventsCategorie =
+    events?.length > 0 ? events?.filter((event) => event.theme == theme) : [];
+
   async function findTheme(theme: string) {
     setTheme(theme);
     console.log(eventsCategorie);
@@ -53,7 +52,6 @@ export function Events() {
     }
   }, [events]);
 
-
   return (
     <>
       <Header />
@@ -61,7 +59,22 @@ export function Events() {
         <div id="category">
           <h1>Categorias</h1>
           <div id="categories">
-            <Swiper slidesPerView={4} spaceBetween={5} navigation>
+            <Swiper
+              slidesPerView={4}
+              spaceBetween={50}
+              breakpoints={{
+                // when window width is >= 320px
+                360: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                1280: {
+                  slidesPerView: 4,
+                  spaceBetween: 50,
+                },
+              }}
+              navigation
+            >
               {categories.map((category) => (
                 <SwiperSlide>
                   <Categorie category={category} findTheme={findTheme} />
@@ -72,39 +85,29 @@ export function Events() {
         </div>
         <div id="event">
           <h1>Eventos</h1>
-          {loading ?
+          {loading ? (
             <div id="loadingPageEvents"></div>
-
-            :
-            theme != '' ?
-              (
-                <div id="events">
-                  {
-                    eventsCategorie!.length > 0 ? (
-                      eventsCategorie!.map((event) => {
-                        return <Card key={event._id} event={event} />
-                      })
-                    ) : (
-                      <h3>Sem eventos nesta categoria.</h3>
-                    )
-                  }
-                </div>
-              )
-              :
-              (
-                <div id="events">
-                  {
-                    events!.length > 0 ? (
-                      events!.map((event) => {
-                        return <Card key={event._id} event={event} />
-                      })
-                    ) : (
-                      <h3>Sem eventos.</h3>
-                    )
-                  }
-                </div>
-              )
-          }
+          ) : theme != "" ? (
+            <div id="events">
+              {eventsCategorie!.length > 0 ? (
+                eventsCategorie!.map((event) => {
+                  return <Card key={event._id} event={event} />;
+                })
+              ) : (
+                <h3>Sem eventos nesta categoria.</h3>
+              )}
+            </div>
+          ) : (
+            <div id="events">
+              {events!.length > 0 ? (
+                events!.map((event) => {
+                  return <Card key={event._id} event={event} />;
+                })
+              ) : (
+                <h3>Sem eventos.</h3>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </>
