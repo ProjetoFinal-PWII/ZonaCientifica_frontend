@@ -31,7 +31,7 @@ export function EditProfile() {
             </button>
           </div>
 
-          <div className="boxContact">
+          <div className="boxEditContact">
             <p className="contact">Contato</p>
 
             <div>
