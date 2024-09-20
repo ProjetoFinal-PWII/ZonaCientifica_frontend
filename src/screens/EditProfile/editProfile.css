@@ -82,7 +82,7 @@
 .boxEditProfile div:nth-child(2) {
   margin-top: 2%;
 }
-.boxContact {
+.boxEditContact {
   display: flex;
   flex-direction: column;
   margin-top: 4%;

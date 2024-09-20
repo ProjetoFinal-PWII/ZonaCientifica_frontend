@@ -1,3 +1,12 @@
+@keyframes loading {
+  0%{
+    transform: rotate(0deg);
+    box-shadow: 1px 2px 20px #b6b6b6;
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
 #bodyPageEvents {
   display: flex;
   flex-direction: column;
@@ -47,12 +56,61 @@
   height: 40px;
   animation: loading 0.7s ease-out infinite;
 }
-@keyframes loading {
-  0%{
-    transform: rotate(0deg);
-    box-shadow: 1px 2px 20px #b6b6b6;
+
+@media (min-width: 360px) and (max-width: 413px){
+  #bodyPageEvents {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/img/color-morph2.png");
+    background-position: 50% 60%;
+    background-size: cover;
+    min-height: 100vh;
   }
-  100%{
-    transform: rotate(360deg);
+  #category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #categories {
+    margin-top: 10px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+  }
+  #category h1,#event h1 {
+    color: #fff;
+    font-size: 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  #event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    flex-direction: column;
+  }
+  #events {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #loadingPageEvents{
+    margin-top: 50px;
+    display: block;
+    border: 7px solid #FFF;
+    border-right: 7px solid transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: loading 0.7s ease-out infinite;
+  }
+  .swiper-button-prev{
+    margin-left: -12px;
+  }
+  .swiper-button-next{
+    margin-right: -12px;
   }
 }
