@@ -15,7 +15,7 @@
   background-size: cover;
   min-height: 100vh;
 }
-#category h1,#favorite h1 {
+#favorite h1 {
   color: #fff;
   font-size: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -63,7 +63,7 @@
     background-size: cover;
     min-height: 100vh;
   }
-  #category h1,#favorite h1 {
+  #favorite h1 {
     color: #fff;
     font-size: 40px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
