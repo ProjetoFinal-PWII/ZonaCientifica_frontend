@@ -34,11 +34,11 @@
 @media (min-width: 360px) and (max-width: 413px){
   .categorieButton {
     cursor: pointer;
-    border-radius: 11px;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
   }
   .categorieButton:active {
       cursor: grabbing;
@@ -49,8 +49,7 @@
   }
   .categorieButton div figcaption {
       position: relative;
-      margin-top: -45px;
-      margin-bottom: 15px;
+      margin-top: -6.5vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -64,5 +63,42 @@
   .categorieButton div img {
       width: 148px;
       height: 55px;
+      border-radius: 10px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1279px){
+  .categorieButton {
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+  }
+  .categorieButton:active {
+      cursor: grabbing;
+  }
+  .categorieButton div {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  .categorieButton div figcaption {
+      position: relative;
+      margin-top: -4vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 1px 1px #000, -2px 1px #000, -2px -1px #000, 1px -1px #000;
+      font-style: normal;
+      font-family: Josefin Sans;
+      font-weight: 700;
+      font-size: 22px;
+  }
+  .categorieButton div img {
+    border-radius: 11px;
+    width: 140px;
+    height: 50px;
   }
 }

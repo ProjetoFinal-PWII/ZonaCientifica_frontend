@@ -103,9 +103,9 @@ export function Card({ event }: Props) {
       <button id="buttonCard" onClick={navDetailEvent}>
         <img src={event.picture} alt="" />
         <div id="info">
-          <h3>{event.title}</h3>
+          <p>{event.title}</p>
           <p>{event.description}</p>
-          <h5>{event.date}</h5>
+          <p>{event.date}</p>
         </div>
       </button>
       {favorite === true ? (
