@@ -131,6 +131,8 @@
     flex-wrap: wrap;
   }
   #eventFavorite h2{
+    width: 80vw;
+    text-align: center;
     color: #fff;
     font-family: Inter;
     font-weight: 400;
