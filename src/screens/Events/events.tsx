@@ -66,6 +66,10 @@ export function Events() {
                 // when window width is >= 320px
                 360: {
                   slidesPerView: 2,
+                  spaceBetween: 5,
+                },
+                601: {
+                  slidesPerView: 3,
                   spaceBetween: 10,
                 },
                 1280: {

@@ -44,9 +44,9 @@ export function Login() {
   return (
     <div id="bodyPageLogin">
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
-        <img src={logo} className="logo" />
+        <img src={logo} className="logoLogin" />
 
-        <div className="input1">
+        <div className="input1Login">
           <label className="label1">E-mail</label>
           <input
             type="text"
@@ -56,7 +56,7 @@ export function Login() {
           <p style={{ color: "red" }}>{errors.email?.message}</p>
         </div>
 
-        <div className="input2">
+        <div className="input2Login">
           <label className="label2">Senha</label>
           <input
             type="password"
@@ -66,9 +66,9 @@ export function Login() {
           <p style={{ color: "red" }}>{errors.password?.message}</p>
         </div>
 
-        <button type="submit">Entrar</button>
+        <button type="submit" className="buttonLogin">Entrar</button>
 
-        <a onClick={signUpScreen}>
+        <a className="toSignUp" onClick={signUpScreen}>
           <p>Não possui uma conta?</p>
           <p>Clique aqui para Cadastrar-se!</p>
         </a>

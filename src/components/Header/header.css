@@ -268,3 +268,133 @@
         height: 21px;
     }
 }
+@media (min-width: 601px) and (max-width: 1279px){
+    @keyframes toogleMenu {
+        0%{
+            width: 65px;
+            height: 64px;
+        }
+        25%{
+            width: 80px;
+            height: 80px;
+            border-bottom-right-radius: 100%;
+        }
+        50%{
+            width: 150px;
+            height: 280px;
+            border-bottom-right-radius: 70%;
+        }
+        70%{
+            width: 180px;
+            height: 350px;
+            border-bottom-right-radius: 50%;
+        }
+        80%{
+            border-bottom-right-radius: 40%;
+        }
+        90%{
+            border-bottom-right-radius: 20%;
+        }
+        100%{
+            width: 200px;
+            height: 400px;
+            border-bottom-right-radius: 0%;
+        }
+    }
+    #header{
+        background-position: 60%;
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        background-image: url("../../assets/img/color-morph.png");
+        background-size: 100%;
+        border-bottom: 1px solid #000;
+        display: flex;
+        justify-content: space-between;
+    }
+    #header a{
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-left: 55vh;
+    }
+    #header a img{
+        object-fit: scale-down;
+        width: 70px;
+        height: 33px;
+    }
+    #menuLateral{
+        position: absolute;
+        z-index: 5;
+        padding: 12px 12px 8px 12px;
+        background-color: #D9D9D9;
+    }
+    #menuLateral li{
+        list-style: none;
+        padding: 10px;
+    }
+    #toogle{
+        display: none;
+    }
+    .collapsedMenu > #buttons nav ul{
+        display: none;
+    }
+    .expandedMenu{
+        width: 200px;
+        height: 400px;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        animation: toogleMenu 0.7s normal linear;
+    }
+    .buttonsOn > nav ul li:nth-child(1){
+        animation: toogleButtonsMenu 1.2s normal linear;
+    }
+    .buttonsOn > nav ul li:nth-child(2){
+        animation: toogleButtonsMenu 1.4s normal linear;
+    }
+    .buttonsOn > nav ul li:nth-child(3){
+        animation: toogleButtonsMenu 1.6s normal linear;
+    }
+    .buttonsOn > nav ul li:nth-child(4){
+        animation: toogleButtonsMenu 1.8s normal linear;
+    }
+    .buttonsOn > nav ul li:nth-child(5){
+        animation: toogleButtonsMenu 2s normal linear;
+    }
+    .buttonsOn > nav ul li:nth-child(6){
+        animation: toogleButtonsMenu 2.2s normal linear;
+    }
+    #buttons nav ul li button{
+        border: 0;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    #buttons nav ul li button img{
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+    #menuLateral label img{
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+    }
+    #menuLateral nav ul li:nth-child(1){
+        margin-top: 20%;
+    }
+    #menuLateral nav ul li:nth-child(5){
+        margin-top: 30%;
+    }
+    #menuLateral nav ul li:nth-child(1) button img{
+        width: 24px;
+        height: 24px;
+    }
+    #menuLateral nav ul li:nth-child(2) button img, #menuLateral nav ul li:nth-child(3) button img{
+        width: 21px;
+        height: 21px;
+    }
+    #menuLateral nav ul li:nth-child(4) button img, #menuLateral nav ul li:nth-child(5) button img{
+        width: 22px;
+        height: 22px;
+    }
+}
