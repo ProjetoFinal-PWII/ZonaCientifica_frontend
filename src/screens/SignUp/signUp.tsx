@@ -42,29 +42,29 @@ export function SignUp() {
   return (
     <div id="bodyPageSignUp">
       <form id="form" onSubmit={handleSubmit(onSubmit)}>
-        <img src={logo} className="logo" />
+        <img src={logo} className="logoSignUp" />
 
-        <div className="input1">
+        <div className="input1SignUp">
           <label className="labelName">Nome completo</label>
           <input type="text" {...register("name")} placeholder="Seu nome"></input>
           <p style={{ color: "red" }}>{errors.name?.message}</p>
         </div>
 
-        <div className="input2">
+        <div className="input2SignUp">
           <label className="labelEmail">Email</label>
           <input type="text" {...register("email")} placeholder="Seu email"></input>
           <p style={{ color: "red" }}>{errors.email?.message}</p>
         </div>
 
-        <div className="input3">
+        <div className="input3SignUp">
           <label className="labelPassword">Senha</label>
           <input type="text" {...register("password")} placeholder="Sua senha"></input>
           <p style={{ color: "red" }}>{errors.password?.message}</p>
         </div>
 
-        <button>Cadastrar</button>
+        <button className="buttonSignUp">Cadastrar</button>
 
-        <a onClick={loginScreen}>
+        <a className="toLogin" onClick={loginScreen}>
           <p>Já possui uma conta?</p>
           <p>Clique aqui para entrar!</p>
         </a>
