@@ -13,7 +13,6 @@ h1 {
   display: flex;
   justify-content: center;
 }
-
 #details {
   width: 80%;
   margin-top: 50px;
@@ -24,7 +23,6 @@ h1 {
   align-items: center;
   justify-content: space-around;
 }
-
 #details img:nth-child(1) {
   width: 580px;
   height: 230px;
@@ -34,7 +32,6 @@ h1 {
   align-items: center;
   margin-bottom: 15px;
 }
-
 #info div:nth-child(2) {
   display: flex;
   align-items: center;
@@ -177,7 +174,8 @@ h1 {
   color: #fff;
   font-family: "Dosis", sans-serif;
   font-size: 22px;
-  font-weight: 200;
+  font-weight: 300;
+  text-align: justify;
 }
 
 @media (min-width: 360px) and (max-width: 413px){
@@ -196,6 +194,9 @@ h1 {
     display: flex;
     justify-content: center;
     font-size: 25px;
+    text-align: center;
+    margin-right: 2vh;
+    margin-left: 2vh;
   }
   
   #details {
@@ -367,5 +368,197 @@ h1 {
     font-family: "Dosis", sans-serif;
     font-size: 3vh;
     font-weight: 200;
+    text-align: justify;
+  }
+}
+@media (min-width: 601px) and (max-width: 1279px){
+  #bodyPageDetailEvent{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/img/color-morph3.png");
+    background-position: 10% 30%;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  h1 {
+    color: #fff;
+    font-family: "IBM Plex Mono", monospace;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    text-align: center;
+    margin-right: 3vh;
+    margin-left: 3vh;
+  }
+  #details {
+    width: 100vw;
+    margin-top: 1vh;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #details img:nth-child(1) {
+    width: 80vw;
+    height: 12vh;
+  }
+  #info{
+    width: 80vw;
+    margin-top: 2vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  #info div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1vh;
+  }
+  #info div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+  }
+  #info div:nth-child(1) p,#info div:nth-child(2) p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.5vh;
+    font-weight: 400;
+    color: #fff;
+  }
+  #info div:nth-child(1) img {
+    width: 22px;
+    height: 22px;
+    margin-right: 22px;
+  }
+  #info div:nth-child(2) img {
+    width: 22px;
+    height: 22px;
+    margin-right: 22px;
+  }
+  #buttonParticipate{
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+  }
+  .activated {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2vh;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .activated:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4c4c74;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .activated:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #17083b;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .activated:hover {
+    color: #fff;
+  }
+  .activated:hover:before {
+    width: 100%;
+  }
+  .disabled {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2vh;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .disabled:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #17083b;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .disabled:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #4c4c74;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .disabled:hover {
+    color: #fff;
+  }
+  .disabled:hover:before {
+    width: 100%;
+  }
+  #description {
+    width: 90vw;
+    border-radius: 20px;
+    background: rgba(217, 217, 217, 0.25);
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
+  #description div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 2vh;
+    padding-bottom: 4vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  #description div h2 {
+    color: #fff;
+    font-family: "Dosis", sans-serif;
+    font-size: 3.5vh;
+    font-weight: 800;
+    margin-bottom: 1.3vh;
+  }
+  #description div p {
+    color: #fff;
+    font-family: "Dosis", sans-serif;
+    font-size: 3vh;
+    font-weight: 300;
+    text-align: justify;
   }
 }
