@@ -63,7 +63,7 @@ export function AuthProvider({ children }: Props) {
     localStorage.removeItem("auth.token");
   }
 
-  async function edit(name: string, userName: string, phone: string, email: string, _id: string, password: string) {
+  async function edit(name: string, userName: string, phone: string, email: string, _id: string) {
     await api.post("/editperfil", {
       name: name,
       userName: userName,
