@@ -11,6 +11,7 @@ type AuthContext = {
   signup(name: string, email: string, password: string): Promise<void>;
   login(email: string, password: string): Promise<void>;
   logout(): void;
+  edit(name: string, userName: string, phone: string, email: string, _id: string, password: string): void;
 };
 
 type Props = {
@@ -27,7 +28,6 @@ export function AuthProvider({ children }: Props) {
     if (savedUser && savedToken) {
       setUser(JSON.parse(savedUser));
       api.defaults.headers.common.Authorization = `Bearer ${savedToken}`;
-      //api.defaults.headers.Authorization = `Bearer ${savedToken}`;
     }
   }
 
@@ -49,8 +49,6 @@ export function AuthProvider({ children }: Props) {
         const user = response.data as User;
         setUser(user);
         api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
-        //console.log(response.data);
-        //localStorage.setItem("user", JSON.stringify(response.data));
         localStorage.setItem("auth.user", JSON.stringify(user));
         localStorage.setItem("auth.token", response.data.token);
       });
@@ -61,16 +59,30 @@ export function AuthProvider({ children }: Props) {
 
   async function logout() {
     setUser(null);
-
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-    localStorage.removeItem("auth.token");
     localStorage.removeItem("auth.user");
+    localStorage.removeItem("auth.token");
+  }
+
+  async function edit(name: string, userName: string, phone: string, email: string, _id: string, password: string) {
+    await api.post("/editperfil", {
+      name: name,
+      userName: userName,
+      phone: phone,
+      email: email,
+      _id: _id
+    }).then((response) => {
+      const newUser = response.data as User;
+      setUser((prevUser) => ({
+        ...prevUser,
+        ...newUser,
+      }));
+      localStorage.setItem("auth.user", JSON.stringify(newUser));
+    })
   }
 
   return (
     <AuthContext.Provider
-      value={{ signed: Boolean(user), user, signup, login, logout }}
+      value={{ signed: Boolean(user), user, signup, login, logout, edit }}
     >
       {children}
     </AuthContext.Provider>
