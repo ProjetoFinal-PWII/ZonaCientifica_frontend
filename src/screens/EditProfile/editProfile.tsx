@@ -28,10 +28,6 @@ const schema = yup
 export function EditProfile() {
   const context = useAuth();
   const navigate = useNavigate()
-  //const [name, setName] = useState(context.user?.name)
-  //const [userName, setUserName] = useState(context.user?.name)
-  //const [phone, setPhone] = useState(context.user?.phone)
-  //const [email, setEmail] = useState(context.user?.email)
   
   const {
     register,
@@ -48,7 +44,7 @@ export function EditProfile() {
   });
 
   function onSubmit(data: FieldValues) {
-    context.edit(data.name, data.userName, data.phone, data.email, context.user?._id, context.user?.password)
+    context.edit(data.name, data.userName, data.phone, data.email, context.user?._id || "")
     updateProfile();
   }
 
@@ -56,23 +52,6 @@ export function EditProfile() {
     navigate("/editProfile")
   }
 
-  /*function handleName(e) {
-    setName(e.target.value)
-  }
-  function handleUserName(e) {
-    setUserName(e.target.value)
-  }
-  function handlePhone (e) {
-    setPhone(e.target.value)
-  }
-  function handleEmail (e) {
-    setEmail(e.target.value)
-  }  
-
-  function editProfile() {
-    context.edit(name, userName, phone, email, context.user?._id, context.user?.password)
-  } */
-  
   return (
     <div id="bodyPageEditProfile">
       <Header />

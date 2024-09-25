@@ -11,7 +11,7 @@ type AuthContext = {
   signup(name: string, email: string, password: string): Promise<void>;
   login(email: string, password: string): Promise<void>;
   logout(): void;
-  edit(name: string, userName: string, phone: string, email: string, _id: string, password: string): void;
+  edit(name: string, userName: string, phone: string, email: string, _id: string): void;
 };
 
 type Props = {
