@@ -32,6 +32,7 @@ export function Router() {
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/participating" element={<Participating />} />
           <Route path="/detailEvent" element={<DetailEvent />} />
+          
         </Route>
       )}
     </Routes>
