@@ -18,8 +18,8 @@ export function DetailEvent() {
         .post("/getParticipatingList", { email: context.user?.email })
         .then((res) => {
           const list = res.data.participatingList;
+          console.log(state)
           list.map((participating) => {
-            console.log(participating);
             if (participating._id === state.eventId) {
               setParticipating(true);
             }
@@ -75,7 +75,7 @@ export function DetailEvent() {
         <h1>{state.eventTitle}</h1>
 
         <div id="details">
-          <img src={state.eventPicture} />
+          <img src={`http://localhost:3000/uploads/${state.eventPicture}`} />
 
           <div id="info">
             <div>

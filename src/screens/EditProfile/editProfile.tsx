@@ -28,7 +28,7 @@ export function EditProfile() {
   const context = useAuth();
   const navigate = useNavigate();
   const [image, setImage] = useState(null);
-  
+    
   const {
     register,
     handleSubmit,
