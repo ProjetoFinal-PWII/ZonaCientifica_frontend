@@ -101,7 +101,7 @@ export function Card({ event }: Props) {
   return (
     <div id="card">
       <button id="buttonCard" onClick={navDetailEvent}>
-        <img src={event.picture} alt="" />
+        <img src={`http://localhost:3000/uploads/${event.picture}`} alt="" />
         <div id="infoCard">
           <p>{event.title}</p>
           <p>{event.description}</p>

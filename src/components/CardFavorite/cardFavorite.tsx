@@ -43,7 +43,7 @@ export function CardFavorite({ event }: Props) {
   return (
     <div id="cardFavorite">
       <button id="buttonCard" onClick={navDetailEvent}>
-        <img src={event.picture} alt="sertao comp" />
+        <img src={`http://localhost:3000/uploads/${event.picture}`} alt="sertao comp" />
         <div id="infoFavorite">
           <p>{event.title}</p>
           <p>{event.description}</p>

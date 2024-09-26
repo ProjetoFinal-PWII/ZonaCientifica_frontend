@@ -1,49 +1,90 @@
 import { Header } from "../../components/Header/header";
-import "./events.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import { date } from "yup";
+import "./criarEvents.css";
+import { useAuth } from "../../contexts/auth";
+import { useForm, FieldValues } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { api } from "../../utils/api";
 
-type Events = {
-  _id: string;
-  title: string;
-  picture: string;
-  description: string;
-  date: string;
-  theme: string;
-  location: string;
-};
+const schema = yup
+  .object({
+    title: yup.string().required("O nome é necessário").max(70, "Nome grande o suficiente"),
+    description: yup
+      .string()
+      .required("A descrição é necessário"),
+    theme: yup
+      .string()
+      .required("O Tema é necessário"),
+    location: yup
+      .string(),
+    date: yup 
+      .date(),
 
-export function criarEvents(){
+  })
+  .required();
+
+export function CriarEvents(){
+    const navigate = useNavigate();
+    const [image, setImage] = useState(null);
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({ 
+        resolver: yupResolver(schema),
+    });
+    
+    function handleImageChange(image) {
+        const file = image.target.files[0];
+        setImage(file);
+    }
+    
+    function onSubmit(data: FieldValues) {
+        const formData = new FormData();
+        formData.append('title', data.title);
+        formData.append('description', data.description);
+        formData.append('theme', data.theme);
+        formData.append('location', data.location);
+        formData.append('date', data.date)
+        if(image){
+          formData.append('picture', image);
+        }
+        createEvent(formData)
+        navigate("/events")
+    }
+
+    async function createEvent(formData: FormData) {
+        await api.post("/event", formData, {
+            headers: {
+                'Contente_Type': 'multipart/form-data',
+            }
+        }).catch((error) => console.error('Erro ao criar Evento: ', error))
+    }
+    
+    
+    
   return (
-    <div id="bodyPageCriarEvento">
-      <Header />
-      <div className="body">
-        <div className="boxCriarEvento">
-          <div>
-            <label for="title">Título do evento <span>(Minimo 8 caracteres)</span></label>
-            <input type="text" id="title" required placeholder=""/>
-          </div>
-          
-          <div>
-            <img src={description} alt="description" className="description" />
-            <button>
-              <input type="text" id="description" name="description" />
-            </button>
-          </div>
+    <div>
+        <Header />
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <input type="text" {...register("title")} placeholder="Titulo do Evento"/><br />
+            <p style={{ color: "red" }}>{errors.title?.message}</p>
+            <input type="text" {...register("description")} placeholder="Descrição" /> <br />
+            <p style={{ color: "red" }}>{errors.description?.message}</p>
+            <input type="text" {...register("theme")} placeholder="Tema"/> <br />
+            <p style={{ color: "red" }}>{errors.theme?.message}</p>
+            <input type="text" {...register("location")}placeholder="Localidade" /><br />
+            <p style={{ color: "red" }}>{errors.location?.message}</p>
+            <input type="date" {...register("date")} placeholder="Data" /> <br />
+            <p style={{ color: "red" }}>{errors.date?.message}</p>
+            <input type="file"  accept="image/*" onChange={handleImageChange}/>
 
-          <div>
-            <button>
-              <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
-            </button>
-          </div>
-
-        </div>  
-      </div>;
+            <button>Criar</button>
+        </form>
     </div>
 
   )
 }
-
