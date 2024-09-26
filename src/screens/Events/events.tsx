@@ -74,8 +74,8 @@ export function Events() {
                 },
                 1280: {
                   slidesPerView: 4,
-                  spaceBetween: 50,
-                },
+                  spaceBetween: 100,
+                },  
               }}
               navigation
             >

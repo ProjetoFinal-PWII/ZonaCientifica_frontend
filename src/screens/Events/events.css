@@ -171,3 +171,66 @@
     margin-right: -12px;
   }
 }
+@media (min-width: 1280px) and (max-width: 1919px){
+  #bodyPageEvents {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/img/color-morph2.png");
+    background-position: 50% 60%;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  #category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #category h1{
+    color: #fff;
+    font-size: 40px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 5vh;
+  }
+  #categories {
+    margin-top: 3vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+  }
+  #event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5vh;
+  }
+  #event h1 {
+    color: #fff;
+    font-size: 40px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 4vh;
+  }
+  #events {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #loadingPageEvents{
+    margin-top: 50px;
+    display: block;
+    border: 7px solid #FFF;
+    border-right: 7px solid transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: loading 0.7s ease-out infinite;
+  }
+  .swiper-button-prev{
+    margin-left: -12px;
+  }
+  .swiper-button-next{
+    margin-right: -12px;
+  }
+}
