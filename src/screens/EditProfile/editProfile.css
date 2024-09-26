@@ -13,13 +13,19 @@
   flex-direction: column;
   align-items: center;
   margin-top: 70px;
-  width: 50%;
+  width: 60%;
   border-radius: 20px;
   border: 1px solid #000;
   background: #d9d9d9;
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.boxEditProfile div:nth-child(1) {
+.boxEditProfile form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.editName{
   margin-top: 8%;
 }
 .picture {
@@ -75,18 +81,22 @@
   font-weight: 500;
   line-height: normal;
 }
-.boxEditProfile div:nth-child(n + 2) {
+.editUserName{
   display: flex;
-  gap: 10px;
 }
-.boxEditProfile div:nth-child(2) {
+.editUserName {
   margin-top: 2%;
 }
 .boxEditContact {
   display: flex;
   flex-direction: column;
-  margin-top: 4%;
-  margin-left: -3%;
+  margin-top: 3vh;
+}
+.editPhone p{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  margin-left: -13vw;
 }
 .buttonSave {
   border-radius: 10px;
@@ -104,11 +114,9 @@
   width: 84px;
   height: 24px;
 }
-
 input[id="file-upload"] {
   display: none;
 }
-
 .divUpload {
   display: flex;
   flex-direction: column;
@@ -122,18 +130,222 @@ input[id="file-upload"] {
   width: 200px;
   height: 200px;
 }
-
 .previewImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 999px;
 }
-
 .placeholder {
   color: #000000;
   font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 360px) and (max-width: 413px){
+}
+@media (min-width: 601px) and (max-width: 1279px){
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  :root{
+    background-color: #FFF;
+    background-size: cover;
+  }
+  .boxEditProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    width: 70vw;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background: #d9d9d9;
+    box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  .boxImage{
+    margin-top: 4vh;
+  }
+  #editInformations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .editName{
+    margin-top: 3vh;
+  }
+  .editUserName{
+    margin-top: 0vh;
+  }
+  .editName input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .editName p{
+    position: fixed;
+    display: flex;
+    max-width: 60%;
+  }
+  .editUserName{
+    margin-top: 4vh;
+    margin-bottom: 1vh;
+  } 
+  .editUserName p{
+    position: fixed;
+    display: flex;
+    max-width: 60%;
+  }
+  .editUserName input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .editPhone input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .editPhone p{
+    max-width: 60%;
+    position: fixed;
+    display: flex;
+  }
+  .editEmail{
+    margin-top: 4vh;
+    margin-bottom: 1vh;
+  }
+  .editEmail input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .editEmail p{
+    position: fixed;
+    display: flex;
+    max-width: 60%;
+  }
+  .boxEditContact {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+  }
+  .boxEditContact p{
+    margin-bottom: 0.2vh;
+  }
+  .boxEditProfile button{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 2px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1919px){
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  :root{
+    background-color: #FFF;
+    background-size: cover;
+  }
+  .boxEditProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    width: 70vw;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background: #d9d9d9;
+    box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  .boxImage{
+    margin-top: 4vh;
+  }
+  #editInformations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .editName{
+    margin-top: 3vh;
+  }
+  .editUserName{
+    margin-top: 0vh;
+  }
+  .editName input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .editName p{
+    position: fixed;
+    display: flex;
+  }
+  .editUserName{
+    margin-top: 3vh;
+  } 
+  .editUserName p{
+    position: fixed;
+    display: flex;
+  }
+  .editUserName input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .editPhone input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .editPhone p{
+    position: fixed;
+    display: flex;
+  }
+  .editEmail{
+    margin-top: 3vh;
+  }
+  .editEmail input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .editEmail p{
+    position: fixed;
+    display: flex;
+  }
+  .boxEditContact {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+  }
+  .boxEditProfile button{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 2px;
+  }
 }
