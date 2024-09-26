@@ -199,6 +199,7 @@
     border-radius: 50%;
     width: 131px;
     height: 131px;
+    object-fit: cover;
   }
   .nameProfile {
     color: #000;
@@ -349,6 +350,7 @@
     border-radius: 50%;
     width: 171px;
     height: 171px;
+    object-fit: cover;
   }
   .nameProfile {
     color: #000;
@@ -500,6 +502,7 @@
     border-radius: 50%;
     width: 171px;
     height: 171px;
+    object-fit: cover;
   }
   .nameProfile {
     color: #000;
