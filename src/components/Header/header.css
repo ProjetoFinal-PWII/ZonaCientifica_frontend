@@ -104,6 +104,9 @@
 .buttonsOn > nav ul li:nth-child(6){
     animation: toogleButtonsMenu 2.2s normal linear;
 }
+.buttonsOn > nav ul li:nth-child(7){
+    animation: toogleButtonsMenu 2.4s normal linear;
+}
 #buttons nav ul li button{
     border: 0;
     background-color: transparent;
@@ -124,7 +127,7 @@
     margin-top: 30%;
 }
 #menuLateral nav ul li:nth-child(5){
-    margin-top: 50%;
+    margin-top: 35%;
 }
 #menuLateral nav ul li:nth-child(1) button img{
     width: 33px;
@@ -134,7 +137,7 @@
     width: 30px;
     height: 30px;
 }
-#menuLateral nav ul li:nth-child(4) button img, #menuLateral nav ul li:nth-child(5) button img{
+#menuLateral nav ul li:nth-child(4) button img, #menuLateral nav ul li:nth-child(5) button img,  #menuLateral nav ul li:nth-child(6) button img{
     width: 31px;
     height: 31px;
 }
@@ -233,6 +236,9 @@
     .buttonsOn > nav ul li:nth-child(6){
         animation: toogleButtonsMenu 2.2s normal linear;
     }
+    .buttonsOn > nav ul li:nth-child(7){
+        animation: toogleButtonsMenu 2.4s normal linear;
+    }
     #buttons nav ul li button{
         border: 0;
         background-color: transparent;
@@ -250,10 +256,10 @@
         height: 25px;
     }
     #menuLateral nav ul li:nth-child(1){
-        margin-top: 20%;
+        margin-top: 15%;
     }
     #menuLateral nav ul li:nth-child(5){
-        margin-top: 30%;
+        margin-top: 20%;
     }
     #menuLateral nav ul li:nth-child(1) button img{
         width: 23px;
@@ -263,7 +269,7 @@
         width: 20px;
         height: 20px;
     }
-    #menuLateral nav ul li:nth-child(4) button img, #menuLateral nav ul li:nth-child(5) button img{
+    #menuLateral nav ul li:nth-child(4) button img, #menuLateral nav ul li:nth-child(5) button img,  #menuLateral nav ul li:nth-child(6) button img{
         width: 21px;
         height: 21px;
     }
@@ -363,6 +369,9 @@
     .buttonsOn > nav ul li:nth-child(6){
         animation: toogleButtonsMenu 2.2s normal linear;
     }
+    .buttonsOn > nav ul li:nth-child(7){
+        animation: toogleButtonsMenu 2.4s normal linear;
+    }
     #buttons nav ul li button{
         border: 0;
         background-color: transparent;
@@ -380,10 +389,10 @@
         height: 25px;
     }
     #menuLateral nav ul li:nth-child(1){
-        margin-top: 20%;
+        margin-top: 18%;
     }
     #menuLateral nav ul li:nth-child(5){
-        margin-top: 30%;
+        margin-top: 20%;
     }
     #menuLateral nav ul li:nth-child(1) button img{
         width: 24px;
@@ -393,7 +402,7 @@
         width: 21px;
         height: 21px;
     }
-    #menuLateral nav ul li:nth-child(4) button img, #menuLateral nav ul li:nth-child(5) button img{
+    #menuLateral nav ul li:nth-child(4) button img, #menuLateral nav ul li:nth-child(5) button img,  #menuLateral nav ul li:nth-child(6) button img{
         width: 22px;
         height: 22px;
     }
