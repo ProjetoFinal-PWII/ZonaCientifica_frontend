@@ -39,7 +39,7 @@ export function Profile() {
             )}
           </div>
           <p className="nameProfile">{context.user?.name}</p>
-          <p>@{context.user?.name}</p>
+          <p>@{context.user?.userName}</p>
           <button className="edit" onClick={navEditProfile}>
             <img src={edit} alt="edit" />
           </button>
