@@ -11,7 +11,7 @@ type AuthContext = {
   signup(name: string, email: string, password: string): Promise<void>;
   login(email: string, password: string): Promise<void>;
   logout(): void;
-  edit(name: string, userName: string, phone: string, email: string, _id: string): void;
+  edit(formData: FormData): void;
 };
 
 type Props = {
@@ -63,13 +63,12 @@ export function AuthProvider({ children }: Props) {
     localStorage.removeItem("auth.token");
   }
 
-  async function edit(name: string, userName: string, phone: string, email: string, _id: string) {
-    await api.post("/editperfil", {
-      name: name,
-      userName: userName,
-      phone: phone,
-      email: email,
-      _id: _id
+  async function edit(formData: FormData) {
+    await api.post("/editperfil", formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      }
+
     }).then((response) => {
       const newUser = response.data as User;
       setUser((prevUser) => ({
@@ -77,7 +76,7 @@ export function AuthProvider({ children }: Props) {
         ...newUser,
       }));
       localStorage.setItem("auth.user", JSON.stringify(newUser));
-    })
+    }).catch((error) => console.error('Erro ao editar perfil: ', error))
   }
 
   return (
