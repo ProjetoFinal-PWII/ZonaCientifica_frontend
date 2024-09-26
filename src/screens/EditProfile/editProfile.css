@@ -137,11 +137,13 @@ input[id="file-upload"] {
   border-radius: 999px;
 }
 .placeholder {
-  color: #000000;
-  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.newpicture {
+  width: 80px;
+  height: 65px;
 }
 
 @media (min-width: 360px) and (max-width: 413px){

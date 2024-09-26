@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import newpicture from "../../assets/img/newpicture.png";
 
 const schema = yup
   .object({
@@ -77,6 +78,7 @@ export function EditProfile() {
   function updateProfile() {
     navigate("/editProfile");
   }
+  const picture = context.user?.picture;
 
   return (
     <div id="bodyPageEditProfile">
@@ -92,11 +94,16 @@ export function EditProfile() {
                     alt="Imagem Selecionada"
                     className="previewImage"
                   />
+                ) : picture ? (
+                  <img src={`http://localhost:3000/uploads/${picture}`} className="previewImage" />
                 ) : (
-                  <div className="placeholder">
-                    <p>Clique para modificar a foto do seu perfil</p>
-                  </div>
-                )}
+                  (
+                    <div className="placeholder">
+                      <img src={newpicture} className="newpicture" />
+                    </div>
+                  )
+                )
+                }
               </label>
               <input
                 id="file-upload"

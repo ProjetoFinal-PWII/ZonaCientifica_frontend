@@ -7,6 +7,7 @@ import facebook from "../../assets/img/Facebook.png";
 import likedin from "../../assets/img/LikedIn.png";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/auth";
+import newpicture from "../../assets/img/newpicture.png";
 
 export function Profile() {
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ export function Profile() {
               <img src={`http://localhost:3000/uploads/${picture}`} alt="picture" className="pictureProfile" />
             ) : (
               <div className="placeholder">
-                  <p>Você está sem foto</p>
+                  <img src={newpicture} className="newpicture" />
               </div>
             )}
           </div>
