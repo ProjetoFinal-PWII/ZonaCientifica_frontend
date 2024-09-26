@@ -34,7 +34,9 @@ export function Login() {
 
   function onSubmit(data: FieldValues) {
     context.login(data.email, data.password);
-    navigate("/profile");
+    if(context.user){
+      navigate("/profile");
+    }
   }
 
   function signUpScreen() {
