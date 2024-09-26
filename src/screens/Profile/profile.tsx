@@ -31,14 +31,14 @@ export function Profile() {
         <div className="boxProfile">
           <div className="divProfile">
             {picture ? (
-              <img src={`http://localhost:3000/uploads/${picture}`} alt="picture" className="picture" />
+              <img src={`http://localhost:3000/uploads/${picture}`} alt="picture" className="pictureProfile" />
             ) : (
               <div className="placeholder">
                   <p>Você está sem foto</p>
               </div>
             )}
           </div>
-          <p className="name">{context.user?.name}</p>
+          <p className="nameProfile">{context.user?.name}</p>
           <p>@{context.user?.name}</p>
           <button className="edit" onClick={navEditProfile}>
             <img src={edit} alt="edit" />
