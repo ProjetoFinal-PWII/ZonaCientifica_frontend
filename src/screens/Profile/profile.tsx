@@ -1,6 +1,5 @@
 import "./profile.css";
 import { Header } from "../../components/Header/header";
-import picture from "../../assets/img/picture.png";
 import edit from "../../assets/img/edit.png";
 import instagram from "../../assets/img/Instagram.png";
 import twitter from "../../assets/img/Twitter.png";
@@ -22,13 +21,23 @@ export function Profile() {
   function navEditProfile() {
     navigate("/editProfile");
   }
+
+  const picture = context.user?.picture
   
   return (
     <div id="bodyPageProfile">
       <Header />
       <div className="bodyProfile">
         <div className="boxProfile">
-          <img src={picture} alt="picture" className="picture" />
+          <div className="divProfile">
+            {picture ? (
+              <img src={`http://localhost:3000/uploads/${picture}`} alt="picture" className="picture" />
+            ) : (
+              <div className="placeholder">
+                  <p>Você está sem foto</p>
+              </div>
+            )}
+          </div>
           <p className="name">{context.user?.name}</p>
           <p>@{context.user?.name}</p>
           <button className="edit" onClick={navEditProfile}>
