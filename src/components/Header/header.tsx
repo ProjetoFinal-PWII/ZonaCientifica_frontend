@@ -6,6 +6,7 @@ import map from "../../assets/img/map.png";
 import heart from "../../assets/img/heart.png";
 import award from "../../assets/img/award.png";
 import home from "../../assets/img/home.png";
+import add from "../../assets/img/add.png";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/auth";
 
@@ -25,6 +26,10 @@ export function Header() {
   function navProfile() {
     navigate("/profile");
   }
+  function navCreateEvents(){
+    navigate("/createEvents");
+  }
+
   function logout() {
     context.logout();
     navigate("/");
@@ -80,6 +85,11 @@ export function Header() {
                 <li>
                   <button onClick={navProfile}>
                     <img src={home} alt="Perfil" /> Perfil
+                  </button>
+                </li>
+                <li>
+                  <button onClick={navCreateEvents}>
+                    <img src={add} /> Criar evento
                   </button>
                 </li>
                 <li>
