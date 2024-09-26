@@ -114,7 +114,7 @@
   width: 84px;
   height: 24px;
 }
-input[type="file"] {
+input[id="file-upload"] {
   display: none;
 }
 .divUpload {
