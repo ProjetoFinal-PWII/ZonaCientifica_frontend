@@ -58,7 +58,7 @@ export function SignUp() {
 
         <div className="input3SignUp">
           <label className="labelPassword">Senha</label>
-          <input type="text" {...register("password")} placeholder="Sua senha"></input>
+          <input type="password" {...register("password")} placeholder="Sua senha"></input>
           <p style={{ color: "red" }}>{errors.password?.message}</p>
         </div>
 
