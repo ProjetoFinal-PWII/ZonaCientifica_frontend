@@ -1,12 +1,11 @@
 import "./editProfile.css";
 import { Header } from "../../components/Header/header";
-import picture from "../../assets/img/picture.png";
-import iconEdit from "../../assets/img/iconEdit.png";
 import { useAuth } from "../../contexts/auth";
 import { useForm, FieldValues } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const schema = yup
   .object({
@@ -27,7 +26,8 @@ const schema = yup
 
 export function EditProfile() {
   const context = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [image, setImage] = useState(null);
   
   const {
     register,
@@ -43,8 +43,25 @@ export function EditProfile() {
     }
   });
 
+  function handleImageChange(image) {
+    const file = image.target.files[0];
+    setImage(file);
+  }
+
   function onSubmit(data: FieldValues) {
-    context.edit(data.name, data.userName, data.phone, data.email, context.user?._id || "")
+    const formData = new FormData();
+    formData.append('name', data.name);
+    formData.append('userName', data.userName);
+    formData.append('phone', data.phone);
+    formData.append('email', data.email);
+    if(context.user?._id){
+      formData.append('_id', context.user?._id)    
+    }
+    if(image){
+      formData.append('picture', image);
+    }
+
+    context.edit(formData)
     updateProfile();
   }
 
@@ -58,11 +75,17 @@ export function EditProfile() {
       <div className="body">
         <div className="boxEditProfile">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
-              <img src={picture} alt="picture" className="picture" />
-              <button>
-                <img src={iconEdit} alt="iconEdit" className="iconEdit" />
-              </button>
+            <div className="boxImage">
+              <label htmlFor="file-upload" className="divUpload">
+                {image ? (
+                  <img src={URL.createObjectURL(image)} alt="Imagem Selecionada" className="previewImage" />
+                ) : (
+                  <div className="placeholder">
+                    <p>Clique para adicionar uma foto ao seu perfil</p>
+                  </div>
+                )}
+              </label>
+              <input id="file-upload" type="file" accept="image/*" onChange={handleImageChange} />
             </div>
 
             <div>
