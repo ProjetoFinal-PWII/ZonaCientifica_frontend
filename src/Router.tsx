@@ -9,7 +9,6 @@ import { Events } from "./screens/Events/events";
 import { Favorites } from "./screens/Favorites/favorites";
 import { Participating } from "./screens/Participating/participating";
 import { DetailEvent } from "./screens/DetailEvent/detailEvent";
-import { criarEvents } from "./screens/CriarEvents/criarEvents";
 
 export function Router() {
   const context = useAuth();
@@ -27,7 +26,6 @@ export function Router() {
           <Route path="/" element={<Profile />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/editProfile" element={<EditProfile/>} />
-          <Route path="/createEvents" element={<criarEvents/>} />
           <Route path="/events" element={<Events />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/participating" element={<Participating />} />
