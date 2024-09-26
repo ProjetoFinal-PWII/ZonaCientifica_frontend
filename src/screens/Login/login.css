@@ -352,3 +352,120 @@
     box-shadow: inset 0 0 8px 4px #FFF;
   }
 }
+@media (min-width: 1280px) and (max-width: 1919px){
+  #bodyPageLogin{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/img/color-morph.png");
+    background-position: 10% 50%;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  .logoLogin {
+    width: 9%;
+    height: 9%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+  #form {
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .input1Login,
+  .input2Login {
+    width: 30%;
+  }
+  .input1Login input,
+  .input2Login input {
+    width: 100%;
+    height: 59px;
+    background-color: #d9d9d9;
+    border: 2px solid #c4c4c4;
+    border-radius: 10px;
+    margin-bottom: 6%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 1%;
+  }
+  .input1Login p, .input2Login p{
+    margin-top: -3%;
+    margin-bottom: 3%;
+  }
+  .label1,
+  .label2 {
+    position: absolute;
+    font-family: Inter;
+    font-weight: 700;
+    color: #000;
+    margin-left: 0.8%;
+    margin-top: 0.2%;
+  }
+  .buttonLogin {
+    margin-top: 1vh;
+    padding: 0.5% 1% 0.5% 1%;
+    width: 8%;
+    border-radius: 10px;
+    border: 2px solid #aaaaaa;
+    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+    line-height: 1.25;
+    background: #929292;
+    text-decoration: none;
+    user-select: none;
+    color: white;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    box-sizing: content-box;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    position: relative;
+    transition: background-color .6s ease;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .buttonLogin:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    transform-style: flat;
+    transform: translate3d(-50%, -50%, 0);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+    transition: width .3s ease, height .3s ease;
+  }
+  .buttonLogin:focus{
+    background: #aaaaaa;
+  }
+  .buttonLogin:hover{
+    background: #aaaaaa;
+  }
+  .buttonLogin:active:after {
+    width: 300px;
+    height: 300px;
+  }
+  .toSignUp {
+    text-align: center;
+    margin-top: 2.5%;
+    color: #fff;
+    font-family: Inter;
+    font-weight: 300;
+    font-size: 110%;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+    transition: box-shadow 1s;
+  }
+  .toSignUp:hover{
+    font-weight: 500;
+    color: #2a2d3f;
+    box-shadow: inset 0 0 8px 4px #FFF;
+  }
+}
