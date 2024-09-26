@@ -28,7 +28,7 @@ export function criarEvents(){
           </div>
           
           <div>
-            <img src={description} alt="description" className="description" />
+            <img src={description } alt="description" className="description" />
             <button>
               <input type="text" id="description" name="description" />
             </button>
