@@ -9,14 +9,23 @@ import { useState } from "react";
 
 const schema = yup
   .object({
-    name: yup.string().required("O nome é necessário").max(70, "Nome grande o suficiente"),
+    name: yup
+      .string()
+      .required("O nome é necessário")
+      .max(70, "Nome grande o suficiente"),
     email: yup
       .string()
       .required("O e-mail é necessário")
-      .matches(/^\b[A-Z0-9._%-]+@[A-Z0-9*-]+\.[A-Z]{2,4}\b$/i, "Formato de e-mail inválido"),
+      .matches(
+        /^\b[A-Z0-9._%-]+@[A-Z0-9*-]+\.[A-Z]{2,4}\b$/i,
+        "Formato de e-mail inválido"
+      ),
     phone: yup
       .string()
-      .matches(/^\d{10,11}$/, "O telefone deve ter 10 ou 11 dígitos e conter apenas números"),
+      .matches(
+        /^\d{10,11}$/,
+        "O telefone deve ter 10 ou 11 dígitos e conter apenas números"
+      ),
     userName: yup
       .string()
       .min(3, "O nome de usuário deve ter pelo menos 3 caracteres")
@@ -28,19 +37,19 @@ export function EditProfile() {
   const context = useAuth();
   const navigate = useNavigate();
   const [image, setImage] = useState(null);
-  
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ 
+  } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
       name: context.user?.name,
       email: context.user?.email,
       phone: context.user?.phone,
       userName: context.user?.userName,
-    }
+    },
   });
 
   function handleImageChange(image) {
@@ -50,23 +59,23 @@ export function EditProfile() {
 
   function onSubmit(data: FieldValues) {
     const formData = new FormData();
-    formData.append('name', data.name);
-    formData.append('userName', data.userName);
-    formData.append('phone', data.phone);
-    formData.append('email', data.email);
-    if(context.user?._id){
-      formData.append('_id', context.user?._id)    
+    formData.append("name", data.name);
+    formData.append("userName", data.userName);
+    formData.append("phone", data.phone);
+    formData.append("email", data.email);
+    if (context.user?._id) {
+      formData.append("_id", context.user?._id);
     }
-    if(image){
-      formData.append('picture', image);
+    if (image) {
+      formData.append("picture", image);
     }
 
-    context.edit(formData)
+    context.edit(formData);
     updateProfile();
   }
 
   function updateProfile() {
-    navigate("/editProfile")
+    navigate("/editProfile");
   }
 
   return (
@@ -78,41 +87,66 @@ export function EditProfile() {
             <div className="boxImage">
               <label htmlFor="file-upload" className="divUpload">
                 {image ? (
-                  <img src={URL.createObjectURL(image)} alt="Imagem Selecionada" className="previewImage" />
+                  <img
+                    src={URL.createObjectURL(image)}
+                    alt="Imagem Selecionada"
+                    className="previewImage"
+                  />
                 ) : (
                   <div className="placeholder">
-                    <p>Clique para adicionar uma foto ao seu perfil</p>
+                    <p>Clique para modificar a foto do seu perfil</p>
                   </div>
                 )}
               </label>
-              <input id="file-upload" type="file" accept="image/*" onChange={handleImageChange} />
+              <input
+                id="file-upload"
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+              />
             </div>
 
-            <div>
-              <input type="text" {...register("name")}  placeholder="Nome"/>
-              <p style={{ color: "red" }}>{errors.name?.message}</p>
-            </div>
-
-            <div>
-              <input type="text" {...register("userName")}  placeholder="Nome"/>
-              <p style={{ color: "red" }}>{errors.userName?.message}</p>
-            </div>
-
-            <div className="boxEditContact">
-              <p className="contact">Contato</p>
-
-              <div>
-                <input type="text" {...register("phone")} placeholder="Telefone"/>
-                <p style={{ color: "red" }}>{errors.phone?.message}</p>
-              </div>
-
-              <div>
-                <input type="text" {...register("email")}  placeholder="Email"/>
-                <p style={{ color: "red" }}>{errors.email?.message}</p>
-              </div>
+            <div id="editInformations">
               
-              <button onClick={updateProfile}>Salvar</button>
+              <div className="editName">
+                <input type="text" {...register("name")} placeholder="Nome" />
+                <p style={{ color: "red" }}>{errors.name?.message}</p>
+              </div>
+
+              <div className="editUserName">
+                <input
+                  type="text"
+                  {...register("userName")}
+                  placeholder="Username"
+                />
+                <p style={{ color: "red" }}>{errors.userName?.message}</p>
+              </div>
+
+              <div className="boxEditContact">
+                <p className="contact">Contato</p>
+
+                <div className="editPhone">
+                  <input
+                    type="text"
+                    {...register("phone")}
+                    placeholder="Telefone"
+                  />
+                  <p style={{ color: "red" }}>{errors.phone?.message}</p>
+                </div>
+
+                <div className="editEmail">
+                  <input
+                    type="text"
+                    {...register("email")}
+                    placeholder="Email"
+                  />
+                  <p style={{ color: "red" }}>{errors.email?.message}</p>
+                </div>
+              </div>
             </div>
+
+            <button onClick={updateProfile}>Salvar</button>
+
           </form>
         </div>
       </div>
