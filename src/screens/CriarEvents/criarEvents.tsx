@@ -1,6 +1,5 @@
 import { Header } from "../../components/Header/header";
 import "./criarEvents.css";
-import { useAuth } from "../../contexts/auth";
 import { useForm, FieldValues } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -26,7 +25,6 @@ const schema = yup
   .required();
 
 export function CriarEvents(){
-    const context = useAuth();
     const navigate = useNavigate();
     const [image, setImage] = useState(null);
 
@@ -73,14 +71,26 @@ export function CriarEvents(){
         <form onSubmit={handleSubmit(onSubmit)}>
             <input type="text" {...register("title")} placeholder="Titulo do Evento"/><br />
             <p style={{ color: "red" }}>{errors.title?.message}</p>
+
             <input type="text" {...register("description")} placeholder="Descrição" /> <br />
             <p style={{ color: "red" }}>{errors.description?.message}</p>
-            <input type="text" {...register("theme")} placeholder="Tema"/> <br />
-            <p style={{ color: "red" }}>{errors.theme?.message}</p>
+
+            <label htmlFor="theme">Escolha o tema do evento:</label>
+            <select id="theme" required {...register("theme")}>
+              <option value="Congresso">Congresso</option>
+              <option value="Workshop">Workshop</option>
+              <option value="Seminário">Seminario</option>
+              <option value="Palestra">Palestra</option>
+              <option value="Meeting">Meeting</option>
+              <option value="Mostra">Mostra</option>
+            </select>
+
             <input type="text" {...register("location")}placeholder="Localidade" /><br />
             <p style={{ color: "red" }}>{errors.location?.message}</p>
+
             <input type="date" {...register("date")} placeholder="Data" /> <br />
             <p style={{ color: "red" }}>{errors.date?.message}</p>
+
             <input type="file"  accept="image/*" onChange={handleImageChange}/>
 
             <button>Criar</button>
