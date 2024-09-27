@@ -125,7 +125,7 @@ export function CriarEvents(){
                   <p style={{ color: "red" }}>{errors.date?.message}</p>
                 </div>
                                 
-                  <button onClick={onSubmit}>Criar</button>
+                  <button className="buttonCriar">Criar</button>
             </form>
           </div>
         </div>  
