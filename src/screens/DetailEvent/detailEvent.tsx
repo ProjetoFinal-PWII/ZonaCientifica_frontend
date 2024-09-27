@@ -63,6 +63,13 @@ export function DetailEvent() {
       setParticipating(true);
     }
   }
+  const data = new Date(state.eventDate);
+
+  const dia = data.getDate();
+  const mes = data.getMonth() + 1;
+  const ano = data.getFullYear();
+
+  const newDate = `${dia}/${mes}/${ano}`
 
   useEffect(() => {
     setParticipating(false);
@@ -80,7 +87,7 @@ export function DetailEvent() {
           <div id="info">
             <div>
               <img src={calendar_white} />
-              <p>{state.eventDate}</p>
+              <p>{newDate}</p>
             </div>
 
             <div>

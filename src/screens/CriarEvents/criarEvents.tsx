@@ -99,7 +99,7 @@ export function CriarEvents(){
               </div>
 
               <div className="boxDate">
-                <input type="date" {...register("date")} placeholder="Data" /> <br />
+                <input type="date" {...register("date")} placeholder="Data"/> <br />
                 <p style={{ color: "red" }}>{errors.date?.message}</p>
               </div>
               
