@@ -93,10 +93,8 @@
   margin-top: 3vh;
 }
 .editPhone p{
-  position: fixed;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  margin-left: -13vw;
 }
 .buttonSave {
   border-radius: 10px;
@@ -147,6 +145,133 @@ input[id="file-upload"] {
 }
 
 @media (min-width: 360px) and (max-width: 413px){
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  :root{
+    background-color: #FFF;
+    background-size: cover;
+  }
+  .boxEditProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    width: 70vw;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background: #d9d9d9;
+    box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+    padding-left: 5vh;
+    padding-right: 5vh;
+  }
+  .divUpload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: transparent;
+    border-radius: 999px;
+    background-color: #f5f5f5;
+    text-align: center;
+    width: 120px;
+    height: 120px;
+  }
+  .boxImage{
+    margin-top: 4vh;
+  }
+  #editInformations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .editName{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+  }
+  .editName input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .editName p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .editUserName{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+  }
+  .editUserName p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .editUserName input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxEditContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+  }
+  .editPhone{
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .editPhone input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .editPhone p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .editEmail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+  }
+  .editEmail input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .editEmail p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .boxEditProfile button{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 2px;
+  }
 }
 @media (min-width: 601px) and (max-width: 1279px){
   .body {
@@ -163,12 +288,14 @@ input[id="file-upload"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 5vh;
     width: 70vw;
     border-radius: 20px;
     border: 1px solid #000;
     background: #d9d9d9;
     box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+    padding-left: 5vh;
+    padding-right: 5vh;
   }
   .boxImage{
     margin-top: 4vh;
@@ -182,10 +309,10 @@ input[id="file-upload"] {
     margin-left: auto;
   }
   .editName{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 3vh;
-  }
-  .editUserName{
-    margin-top: 0vh;
   }
   .editName input{
     border-radius: 4px;
@@ -193,23 +320,36 @@ input[id="file-upload"] {
     padding: 2px;
   }
   .editName p{
-    position: fixed;
+    position: relative;
     display: flex;
-    max-width: 60%;
   }
   .editUserName{
-    margin-top: 4vh;
-    margin-bottom: 1vh;
-  } 
-  .editUserName p{
-    position: fixed;
     display: flex;
-    max-width: 60%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+  }
+  .editUserName p{
+    position: relative;
+    display: flex;
+    text-align: center;
   }
   .editUserName input{
     border-radius: 4px;
     border: none;
     padding: 2px;
+  }
+  .boxEditContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+  }
+  .editPhone{
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .editPhone input{
     border-radius: 4px;
@@ -217,13 +357,15 @@ input[id="file-upload"] {
     padding: 2px;
   }
   .editPhone p{
-    max-width: 60%;
-    position: fixed;
+    position: relative;
     display: flex;
+    text-align: center;
   }
   .editEmail{
-    margin-top: 4vh;
-    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
   }
   .editEmail input{
     border-radius: 4px;
@@ -231,17 +373,8 @@ input[id="file-upload"] {
     padding: 2px;
   }
   .editEmail p{
-    position: fixed;
+    position: relative;
     display: flex;
-    max-width: 60%;
-  }
-  .boxEditContact {
-    display: flex;
-    flex-direction: column;
-    margin-top: 3vh;
-  }
-  .boxEditContact p{
-    margin-bottom: 0.2vh;
   }
   .boxEditProfile button{
     margin-top: 3vh;
@@ -297,16 +430,20 @@ input[id="file-upload"] {
     border-radius: 4px;
     border: none;
     padding: 2px;
+    background-color: #f5f5f5;
   }
   .editName p{
-    position: fixed;
+    position: relative;
     display: flex;
   }
   .editUserName{
-    margin-top: 3vh;
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   } 
   .editUserName p{
-    position: fixed;
+    position: relative;
     display: flex;
   }
   .editUserName input{
@@ -314,17 +451,25 @@ input[id="file-upload"] {
     border: none;
     padding: 2px;
   }
+  .editPhone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .editPhone input{
     border-radius: 4px;
     border: none;
     padding: 2px;
   }
   .editPhone p{
-    position: fixed;
+    position: relative;
     display: flex;
   }
   .editEmail{
-    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
   }
   .editEmail input{
     border-radius: 4px;
@@ -332,12 +477,13 @@ input[id="file-upload"] {
     padding: 2px;
   }
   .editEmail p{
-    position: fixed;
+    position: relative;
     display: flex;
   }
   .boxEditContact {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 3vh;
   }
   .boxEditProfile button{
