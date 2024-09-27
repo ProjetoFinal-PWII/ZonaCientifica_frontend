@@ -17,9 +17,10 @@ const schema = yup
       .string()
       .required("O Tema é necessário"),
     location: yup
-      .string(),
+      .string()
+      .required("A localização é necessário"),
     date: yup 
-      .date(),
+      .date()
 
   })
   .required();
@@ -69,29 +70,39 @@ export function CriarEvents(){
     <div>
         <Header />
         <form onSubmit={handleSubmit(onSubmit)}>
-            <input type="text" {...register("title")} placeholder="Titulo do Evento"/><br />
-            <p style={{ color: "red" }}>{errors.title?.message}</p>
+            <div className="boxTitle">
+              <input type="text" {...register("title")} placeholder="Titulo do Evento"/><br />
+              <p style={{ color: "red" }}>{errors.title?.message}</p>
+            </div>
+            <div className="boxDescription">
+              <input type="text" {...register("description")} placeholder="Descrição" /> <br />
+              <p style={{ color: "red" }}>{errors.description?.message}</p>
+            </div>
+            <div className="boxTheme">
+              <label htmlFor="theme">Escolha o tema do evento:</label>
+              <select id="theme" required {...register("theme")}>
+                <option value="Congresso">Congresso</option>
+                <option value="Workshop">Workshop</option>
+                <option value="Seminário">Seminario</option>
+                <option value="Palestra">Palestra</option>
+                <option value="Meeting">Meeting</option>
+                <option value="Mostra">Mostra</option>
+              </select>
+            </div>
 
-            <input type="text" {...register("description")} placeholder="Descrição" /> <br />
-            <p style={{ color: "red" }}>{errors.description?.message}</p>
+            <div className="boxLocation">
+              <input type="text" {...register("location")}placeholder="Localidade" /><br />
+              <p style={{ color: "red" }}>{errors.location?.message}</p>
+            </div>
 
-            <label htmlFor="theme">Escolha o tema do evento:</label>
-            <select id="theme" required {...register("theme")}>
-              <option value="Congresso">Congresso</option>
-              <option value="Workshop">Workshop</option>
-              <option value="Seminário">Seminario</option>
-              <option value="Palestra">Palestra</option>
-              <option value="Meeting">Meeting</option>
-              <option value="Mostra">Mostra</option>
-            </select>
-
-            <input type="text" {...register("location")}placeholder="Localidade" /><br />
-            <p style={{ color: "red" }}>{errors.location?.message}</p>
-
-            <input type="date" {...register("date")} placeholder="Data" /> <br />
-            <p style={{ color: "red" }}>{errors.date?.message}</p>
-
-            <input type="file"  accept="image/*" onChange={handleImageChange}/>
+            <div className="boxDate">
+              <input type="date" {...register("date")} placeholder="Data" /> <br />
+              <p style={{ color: "red" }}>{errors.date?.message}</p>
+            </div>
+            
+            <div className="boxImage">
+              <input type="file"  accept="image/*" onChange={handleImageChange}/>
+            </div>
 
             <button>Criar</button>
         </form>
