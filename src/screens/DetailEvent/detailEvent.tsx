@@ -7,6 +7,16 @@ import { api } from "../../utils/api";
 import { useAuth } from "../../contexts/auth";
 import { useLocation } from "react-router-dom";
 
+type Events = {
+  _id: string;
+  title: string;
+  picture: string;
+  description: string;
+  date: string;
+  theme: string;
+  location: string;
+};
+
 export function DetailEvent() {
   const [participating, setParticipating] = useState(false);
   const context = useAuth();
@@ -19,7 +29,7 @@ export function DetailEvent() {
         .then((res) => {
           const list = res.data.participatingList;
           console.log(state)
-          list.map((participating) => {
+          list.map((participating: Events) => {
             if (participating._id === state.eventId) {
               setParticipating(true);
             }
