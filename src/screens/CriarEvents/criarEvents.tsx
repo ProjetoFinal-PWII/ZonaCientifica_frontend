@@ -29,7 +29,7 @@ const schema = yup
 
 export function CriarEvents(){
     const navigate = useNavigate();
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState<null | File>(null);
 
     const {
         register,
@@ -39,9 +39,11 @@ export function CriarEvents(){
         resolver: yupResolver(schema),
     });
     
-    function handleImageChange(image) {
-        const file = image.target.files[0];
-        setImage(file);
+    function handleImageChange(image: React.ChangeEvent<HTMLInputElement>) {
+        const file = image.target.files?.[0]
+        if(file){
+          setImage(file);
+        }
     }
     
     function onSubmit(data: FieldValues) {

@@ -2,7 +2,6 @@ import React from "react";
 import { createContext, useContext, useEffect, useState } from "react";
 import { api } from "../utils/api";
 import { User } from "../utils/types/User";
-import { redirect } from "react-router-dom";
 
 const AuthContext = createContext({} as AuthContext);
 
