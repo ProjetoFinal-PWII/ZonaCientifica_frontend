@@ -78,7 +78,7 @@ export function EditProfile() {
   }
 
   function updateProfile() {
-    navigate("/editProfile");
+    navigate("/profile");
   }
   const picture = context.user?.picture;
 
@@ -154,7 +154,7 @@ export function EditProfile() {
               </div>
             </div>
 
-            <button onClick={updateProfile}>Salvar</button>
+            <button>Salvar</button>
 
           </form>
         </div>
