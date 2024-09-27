@@ -30,6 +30,7 @@ npm run dev
 ```
 http://localhost:5173/
 ```
+
 ## Utilizando
 
 ###### Primeiramente faça seu cadastro na tela de cadastro.
@@ -39,6 +40,22 @@ http://localhost:5173/
 ###### Você pode navegar entre as telas da aplicação pelo menu lateral encontrado no cabeçalho na parte superior esquerda da tela. 
 
 ###### Também é possível criar, participar e favoritar eventos.
+
+## Media queries
+
+#### A responsividade funciona apropriadamente nas seguintes proporções:
+
+<mark> Mobile </mark>
+
+<cite> min-width: 360px & max-width: 413px </cite>
+
+<mark> Tablet </mark>
+
+<cite> min-width: 601px & max-width: 1279px </cite>
+
+<mark> Desktop </mark>
+
+<cite> min-width: 1280px & max-width: 1919px </cite>
 
 ## Criando o container docker
 ```
