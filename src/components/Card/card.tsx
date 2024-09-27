@@ -93,6 +93,13 @@ export function Card({ event }: Props) {
       },
     });
   }
+  const data = new Date(event.date);
+
+  const dia = data.getDate();
+  const mes = data.getMonth() + 1;
+  const ano = data.getFullYear();
+
+  const newDate = `${dia}/${mes}/${ano}`
 
   useEffect(() => {
     setFavorite(false);
@@ -105,7 +112,7 @@ export function Card({ event }: Props) {
         <div id="infoCard">
           <p>{event.title}</p>
           <p>{event.description}</p>
-          <p>{event.date}</p>
+          <p>{newDate}</p>
         </div>
       </button>
       {favorite === true ? (
