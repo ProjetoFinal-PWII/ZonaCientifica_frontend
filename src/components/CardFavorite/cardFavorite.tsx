@@ -40,6 +40,13 @@ export function CardFavorite({ event }: Props) {
       },
     });
   }
+  const data = new Date(event.date);
+
+  const dia = data.getDate();
+  const mes = data.getMonth() + 1;
+  const ano = data.getFullYear();
+
+  const newDate = `${dia}/${mes}/${ano}`
   return (
     <div id="cardFavorite">
       <button id="buttonCard" onClick={navDetailEvent}>
@@ -47,7 +54,7 @@ export function CardFavorite({ event }: Props) {
         <div id="infoFavorite">
           <p>{event.title}</p>
           <p>{event.description}</p>
-          <p>{event.date}</p>
+          <p>{newDate}</p>
         </div>
       </button>
       <button id="buttonCardFavorite" onClick={deleteFavorite}>
