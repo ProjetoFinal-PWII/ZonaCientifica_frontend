@@ -1,27 +1,54 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> [!WARNING]
+> Você precisará de um container com o MongoDB rodando no docker na porta padrão (27017:27017). Mais informações abaixo.
 
-Currently, two official plugins are available:
+## Iniciando o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**1. Clone tanto o repositório do front-end quanto o do back-end.**
+**2. Instale as dependências dentro de cada um:**
 
-## Expanding the ESLint configuration
+```
+npm i
+```
+**3. Execute cada um em terminais diferentes:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+##### Back-end
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+npm start
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+##### Front-end
+
+```
+npm run dev
+```
+
+**4. Vá para a seguinte URL em seu navegador:**
+
+```
+http://localhost:5173/
+```
+## Utilizando
+
+###### Primeiramente faça seu cadastro na tela de cadastro.
+
+###### Ao fazer login complete seu perfil com o botão de editar perfil.
+
+###### Você pode navegar entre as telas da aplicação pelo menu lateral encontrado no cabeçalho na parte superior esquerda da tela. 
+
+###### Também é possível criar, participar e favoritar eventos.
+
+## Criando o container docker
+```
+sudo docker pull mongo
+```
+```
+sudo docker network create mongo-network
+```
+```
+sudo docker run --network mongo-network --name mongo -p 27017:27017 -d mongo:latest.
+```
+#### Desenvolvido por:
+[Alisson Almeida](https://github.com/AlissonAlmeidaSS), [Guilherme Costa](https://github.com/guilhercos) e [Leonardo Mendes](https://github.com/leomendes18)
