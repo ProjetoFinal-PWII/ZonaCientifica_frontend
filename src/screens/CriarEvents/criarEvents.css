@@ -119,6 +119,15 @@ input[id="file-img"]{
   position: relative;
   display: flex;
 }
+.boxLocation {
+  margin-top: 5%;
+}
+.boxTheme{
+  display: flex;
+}
+.boxTheme {
+  margin-top: 2%;
+}
 .buttonCriar {
   border-radius: 10px;
   border: 2px solid #000;
