@@ -84,7 +84,7 @@ export function CriarEvents(){
                 <p style={{ color: "red" }}>{errors.description?.message}</p>
               </div>
               <div className="boxTheme">
-                <label htmlFor="theme">Escolha o tema do evento:</label>
+                <label htmlFor="theme">Tipo De Evento:</label>
                 <select id="theme" required {...register("theme")}>
                   <option value="Congresso">Congresso</option>
                   <option value="Workshop">Workshop</option>
