@@ -6,6 +6,8 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../../utils/api";
+import newpicture from "../../assets/img/newpicture.png";
+
 
 const schema = yup
   .object({
@@ -69,43 +71,61 @@ export function CriarEvents(){
   return (
     <div>
         <Header />
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="boxTitle">
-              <input type="text" {...register("title")} placeholder="Titulo do Evento"/><br />
-              <p style={{ color: "red" }}>{errors.title?.message}</p>
-            </div>
-            <div className="boxDescription">
-              <input type="text" {...register("description")} placeholder="Descrição" /> <br />
-              <p style={{ color: "red" }}>{errors.description?.message}</p>
-            </div>
-            <div className="boxTheme">
-              <label htmlFor="theme">Escolha o tema do evento:</label>
-              <select id="theme" required {...register("theme")}>
-                <option value="Congresso">Congresso</option>
-                <option value="Workshop">Workshop</option>
-                <option value="Seminário">Seminario</option>
-                <option value="Palestra">Palestra</option>
-                <option value="Meeting">Meeting</option>
-                <option value="Mostra">Mostra</option>
-              </select>
-            </div>
+        <div className="boxCriarEvents">
+          <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="boxTitle">
+                <input type="text" {...register("title")} placeholder="Titulo do Evento"/><br />
+                <p style={{ color: "red" }}>{errors.title?.message}</p>
+              </div>
+              <div className="boxDescription">
+                <input type="text" {...register("description")} placeholder="Descrição" /> <br />
+                <p style={{ color: "red" }}>{errors.description?.message}</p>
+              </div>
+              <div className="boxTheme">
+                <label htmlFor="theme">Escolha o tema do evento:</label>
+                <select id="theme" required {...register("theme")}>
+                  <option value="Congresso">Congresso</option>
+                  <option value="Workshop">Workshop</option>
+                  <option value="Seminário">Seminario</option>
+                  <option value="Palestra">Palestra</option>
+                  <option value="Meeting">Meeting</option>
+                  <option value="Mostra">Mostra</option>
+                </select>
+              </div>
 
-            <div className="boxLocation">
-              <input type="text" {...register("location")}placeholder="Localidade" /><br />
-              <p style={{ color: "red" }}>{errors.location?.message}</p>
-            </div>
+              <div className="boxLocation">
+                <input type="text" {...register("location")}placeholder="Localidade" /><br />
+                <p style={{ color: "red" }}>{errors.location?.message}</p>
+              </div>
 
-            <div className="boxDate">
-              <input type="date" {...register("date")} placeholder="Data" /> <br />
-              <p style={{ color: "red" }}>{errors.date?.message}</p>
-            </div>
-            
-            <div className="boxImage">
-              <input type="file"  accept="image/*" onChange={handleImageChange}/>
-            </div>
+              <div className="boxDate">
+                <input type="date" {...register("date")} placeholder="Data" /> <br />
+                <p style={{ color: "red" }}>{errors.date?.message}</p>
+              </div>
+              
+              <div className="boxImg">
+                <label htmlFor="file-img" className="boxUpload">
+                  {image ? (
+                      <img
+                        src={URL.createObjectURL(image)}
+                        alt="Imagem Selecionada"
+                        className="previewImg"
+                      />
+                    ) : (
+                      (
+                        <div className="placeholder">
+                          <img src={newpicture} className="newpicture" />
+                        </div>
+                      )
+                    )
+                  }
+                </label>
+                <input id="file-img" type="file"  accept="image/*" onChange={handleImageChange}/>
+              </div>
 
-            <button>Criar</button>
-        </form>
+              <button>Criar</button>
+          </form>
+        </div>
     </div>
 
   )
