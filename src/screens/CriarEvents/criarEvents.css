@@ -1,5 +1,26 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+:root{
+  background-color: #FFF;
+  background-size: cover;
+}
 .boxCriarEvents{
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  margin-left: center;
+  width: 60%;
+  border-radius: 20px;
+  border: 1px solid #000;
+  background: #d9d9d9;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .boxUpload{
   display: flex;
@@ -11,8 +32,8 @@
   border-radius: 10px;
   background-color: #f5f5f5;
   text-align: center;
-  width: 500px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 input[id="file-img"]{
     display: none;
@@ -21,4 +42,522 @@ input[id="file-img"]{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+:root{
+  background-color: #FFF;
+  background-size: cover;
+}
+.boxCriarEvents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+  width: 60%;
+  border-radius: 20px;
+  border: 1px solid #000;
+  background: #d9d9d9;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.boxCriarEvents form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.boxTitle{
+  margin-top: 5%;
+}
+.boxCriarEvents div button {
+  background-color: transparent;
+  border: 0;
+}
+.boxTitle {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.boxDescription {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.boxTheme {
+  color: #000;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.boxLocation {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.boxDate {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.boxTitle{
+  display: flex;
+}
+.boxTitle {
+  margin-top: 2%;
+}
+.boxLocation p{
+  position: relative;
+  display: flex;
+}
+.boxDate {
+  margin-top: 5%;
+}
+.boxDate p{
+  position: relative;
+  display: flex;
+}
+.boxDate {
+  margin-top: 5%;
+}
+.boxTheme{
+  display: flex;
+}
+.boxTheme {
+  margin-top: 2%;
+}
+.buttonCriar {
+  border-radius: 10px;
+  border: 2px solid #000;
+  background: #c4c4c4;
+  padding: 5px;
+  margin-left: 83%;
+  margin-top: 6%;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonCriar img {
+  width: 84px;
+  height: 24px;
+}
+input[id="file-upload"] {
+  display: none;
+}
+.divUpload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: transparent;
+  border-radius: 999px;
+  background-color: #f5f5f5;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+}
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 999px;
+}
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.newpicture {
+  width: 80px;
+  height: 65px;
+}
+
+@media (min-width: 360px) and (max-width: 413px){
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  :root{
+    background-color: #FFF;
+    background-size: cover;
+  }
+  .boxCriarEvents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    width: 70vw;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background: #d9d9d9;
+    box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+    padding-left: 5vh;
+    padding-right: 5vh;
+  }
+  .divUpload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: transparent;
+    border-radius: 999px;
+    background-color: #f5f5f5;
+    text-align: center;
+    width: 120px;
+    height: 120px;
+  }
+  .boxImage{
+    margin-top: 4vh;
+  }
+  .boxTheme{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+  }
+  .boxTitle input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxTitle p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .boxTitle input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+  }
+  .boxTitle p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .boxTitle input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxTheme{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+  }
+  .boxTheme p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .boxTheme input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxLocation{
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .boxLocation input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxLocation p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .boxDate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+  }
+  .boxDate input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxDate p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .boxCriarEvents .buttonCriar{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 2px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1279px){
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  :root{
+    background-color: #FFF;
+    background-size: cover;
+  }
+  .boxCriarEvents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    width: 70vw;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background: #d9d9d9;
+    box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+    padding-left: 5vh;
+    padding-right: 5vh;
+  }
+  .boxImage{
+    margin-top: 4vh;
+  }
+  #editInformations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .boxTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+  }
+  .boxTitle input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxTitle p{
+    position: relative;
+    display: flex;
+  }
+  .boxDescription{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+  }
+  .boxDescription p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .boxDescription input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxTheme{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+  }
+  .boxTheme p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .boxTheme input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxLocation{
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .boxLocation input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxLocation p{
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+  .boxDate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+  }
+  .boxDate input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxDate p{
+    position: relative;
+    display: flex;
+  }
+  .boxCriarEvents .buttonCriar{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 2px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1919px){
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  :root{
+    background-color: #FFF;
+    background-size: cover;
+  }
+  .boxCriarEvents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    width: 70vw;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background: #d9d9d9;
+    box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  .boxImage{
+    margin-top: 4vh;
+  }
+  
+  .boxTitle{
+    margin-top: 3vh;
+  }
+  .boxDescription{
+    margin-top: 0vh;
+  }
+  .boxTheme{
+    margin-top: 0vh;
+  }
+  .boxTitle input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+    background-color: #f5f5f5;
+  }
+  .boxTitle p{
+    position: relative;
+    display: flex;
+  }
+  .boxDescription{
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } 
+  .boxDescription p{
+    position: relative;
+    display: flex;
+  }
+  .boxDescription input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxLocation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .boxLocation input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxLocation p{
+    position: relative;
+    display: flex;
+  }
+  .boxTheme{
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } 
+  .boxTheme p{
+    position: relative;
+    display: flex;
+  }
+  .boxTheme input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxDate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+  }
+  .boxDate input{
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+  }
+  .boxDate p{
+    position: relative;
+    display: flex;
+  }
+  .boxCriarEvents .buttonCriar{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 2px;
+  }
 }
