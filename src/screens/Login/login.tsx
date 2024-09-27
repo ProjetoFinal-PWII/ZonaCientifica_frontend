@@ -38,7 +38,7 @@ export function Login() {
       navigate("/profile");
     }
   }
-
+  
   function signUpScreen() {
     navigate("/register");
   }
