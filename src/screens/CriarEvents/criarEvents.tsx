@@ -106,7 +106,7 @@ export function CriarEvents(){
               </div>
               
               <div className="boxImg">
-                <label htmlFor="file-img" className="boxUpload">
+                <label htmlFor="file-img" className="divUpload">
                   {image ? (
                       <img
                         src={URL.createObjectURL(image)}
@@ -124,8 +124,7 @@ export function CriarEvents(){
                 </label>
                 <input id="file-img" type="file"  accept="image/*" onChange={handleImageChange}/>
               </div>
-
-              <button>Criar</button>
+                <button>Criar</button>
           </form>
         </div>
     </div>
