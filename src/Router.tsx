@@ -1,6 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-
-import { useAuth } from "./contexts/auth";
 import { Profile } from "./screens/Profile/profile";
 import { EditProfile } from "./screens/EditProfile/editProfile";
 import { Login } from "./screens/Login/login";
@@ -12,12 +10,11 @@ import { DetailEvent } from "./screens/DetailEvent/detailEvent";
 import { CriarEvents } from "./screens/CriarEvents/criarEvents";
 
 export function Router() {
-  const context = useAuth();
-  const isLogged = !!context.user;
+  const user = localStorage.getItem('auth.user');
 
   return (
     <Routes>
-      {!isLogged ? (
+      {!user ? (
         <Route>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
