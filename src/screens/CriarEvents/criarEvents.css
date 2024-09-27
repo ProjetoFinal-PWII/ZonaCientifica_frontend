@@ -43,23 +43,6 @@ input[id="file-img"]{
     height: 100%;
     object-fit: cover;
 }
-. {
-  border-radius: 10px;
-  border: 2px solid #000;
-  background: #c4c4c4;
-  padding: 5px;
-  margin-left: 83%;
-  margin-top: 6%;
-  margin-bottom: 2%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-
-
 .body {
   display: flex;
   flex-direction: column;
@@ -89,15 +72,6 @@ input[id="file-img"]{
 }
 .boxTitle{
   margin-top: 5%;
-}
-.picture {
-  margin-top: 5%;
-  width: 171px;
-  height: 171px;
-}
-.iconEdit {
-  width: 20px;
-  height: 20px;
 }
 .boxCriarEvents div button {
   background-color: transparent;
@@ -135,23 +109,18 @@ input[id="file-img"]{
   font-weight: 500;
   line-height: normal;
 }
-.editUserName{
+.boxTitle{
   display: flex;
 }
-.editUserName {
+.boxTitle {
   margin-top: 2%;
 }
-.boxEditContact {
-  display: flex;
-  flex-direction: column;
-  margin-top: 3vh;
-}
-.editPhone p{
+.boxLocation p{
   position: relative;
   display: flex;
 }
-.buttonCriarButton {
-  border-radius: 50px;
+.buttonCriar {
+  border-radius: 10px;
   border: 2px solid #000;
   background: #c4c4c4;
   padding: 5px;
@@ -162,7 +131,7 @@ input[id="file-img"]{
   justify-content: center;
   align-items: center;
 }
-.buttonSave img {
+.buttonCriar img {
   width: 84px;
   height: 24px;
 }
@@ -238,64 +207,50 @@ input[id="file-upload"] {
   .boxImage{
     margin-top: 4vh;
   }
-  #editInformations{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .editName{
+  .boxTheme{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 3vh;
   }
-  .editName input{
+  .boxTitle input{
     border-radius: 4px;
     border: none;
     padding: 2px;
   }
-  .editName p{
+  .boxTitle p{
     position: relative;
     display: flex;
     text-align: center;
   }
-  .editUserName{
+  .boxTitle input{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1vh;
   }
-  .editUserName p{
+  .boxTitle p{
     position: relative;
     display: flex;
     text-align: center;
   }
-  .editUserName input{
+  .boxTitle input{
     border-radius: 4px;
     border: none;
     padding: 2px;
   }
-  .boxEditContact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 3vh;
-  }
-  .editPhone{
+  .boxLocation{
     margin-top: 1vh;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .editPhone input{
+  .boxLocation input{
     border-radius: 4px;
     border: none;
     padding: 2px;
   }
-  .editPhone p{
+  .boxLocation p{
     position: relative;
     display: flex;
     text-align: center;
@@ -362,33 +317,33 @@ input[id="file-upload"] {
     margin-right: auto;
     margin-left: auto;
   }
-  .editName{
+  .boxTitle{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 3vh;
   }
-  .editName input{
+  .boxTitle input{
     border-radius: 4px;
     border: none;
     padding: 2px;
   }
-  .editName p{
+  .boxTitle p{
     position: relative;
     display: flex;
   }
-  .editUserName{
+  .boxDescription{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1vh;
   }
-  .editUserName p{
+  .boxDescription p{
     position: relative;
     display: flex;
     text-align: center;
   }
-  .editUserName input{
+  .boxDescription input{
     border-radius: 4px;
     border: none;
     padding: 2px;
@@ -399,18 +354,18 @@ input[id="file-upload"] {
     align-items: center;
     margin-top: 3vh;
   }
-  .editPhone{
+  .boxLocation{
     margin-top: 1vh;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .editPhone input{
+  .boxLocation input{
     border-radius: 4px;
     border: none;
     padding: 2px;
   }
-  .editPhone p{
+  .boxLocation p{
     position: relative;
     display: flex;
     text-align: center;
@@ -466,56 +421,49 @@ input[id="file-upload"] {
   .boxImage{
     margin-top: 4vh;
   }
-  #editInformations{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .editName{
+  
+  .boxTitle{
     margin-top: 3vh;
   }
-  .editUserName{
+  .boxDescription{
     margin-top: 0vh;
   }
-  .editName input{
+  .boxTitle input{
     border-radius: 4px;
     border: none;
     padding: 2px;
     background-color: #f5f5f5;
   }
-  .editName p{
+  .boxTitle p{
     position: relative;
     display: flex;
   }
-  .editUserName{
+  .boxDescription{
     margin-top: 1vh;
     display: flex;
     flex-direction: column;
     align-items: center;
   } 
-  .editUserName p{
+  .boxDescription p{
     position: relative;
     display: flex;
   }
-  .editUserName input{
+  .boxDescription input{
     border-radius: 4px;
     border: none;
     padding: 2px;
   }
-  .editPhone{
+  .boxLocation{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .editPhone input{
+  .boxLocation input{
     border-radius: 4px;
     border: none;
     padding: 2px;
   }
-  .editPhone p{
+  .boxLocation p{
     position: relative;
     display: flex;
   }
